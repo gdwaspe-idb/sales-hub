@@ -474,6 +474,240 @@ SECTORS.push({
   ]
 });
 
+
+// ─── SECTOR 3: PUBLIC SECTOR ──────────────────────────────────────────────────
+SECTORS.push({
+  id: 'publicsector',
+  name: 'Public Sector',
+  icon: 'PS',
+  tagline: 'AGSA audit remediation · grant & procurement fraud · POPIA for citizens · service delivery reporting',
+  openingQ: '"In your most recent AGSA management letter, how many findings related to data quality, missing documentation, or inability to reconcile figures between systems — and how many of those were repeat findings from the prior audit cycle? And if the Information Regulator contacted your department tomorrow requesting a data processing register for all citizen personal information you process, how prepared would your Information Officer be to respond?"',
+  vp: 'Reduces AGSA audit findings, detects grant and procurement fraud before disbursement, and governs citizen data in full POPIA compliance — deployed on SA infrastructure, managed locally by iDbase360, with entry points that fall below most competitive tender thresholds.',
+  entry: 'DataTrust360 Audit Readiness Assessment (consulting entry, below tender threshold) · DataIQ360 Grant Fraud Detection · DataIQ360 Procurement Analytics · DataFlow360 Service Delivery Reporting Automation',
+  events: 'GovTech SA (Tshwane, annual) · AGSA stakeholder forums and audit outcome briefings · SALGA annual conference and municipal events · DPSA digital working groups · October–December peak procurement window before financial year-end · February–March AGSA audit preparation urgency window · Minerals Council and SOE CEO forums',
+
+  personas: [
+    {
+      title: 'Director-General / CFO / City Manager / Municipal Manager',
+      role: 'Accounting Officer — Economic Buyer',
+      vp: 'iDbase360 reduces AGSA data quality findings, provides documented evidence of proactive governance that demonstrates PFMA accountability to the Auditor-General, and detects grant and procurement fraud before disbursement — reducing the irregular expenditure disclosure that creates personal liability under PFMA Section 38.'
+    },
+    {
+      title: 'Chief Audit Executive / Head of Internal Audit',
+      role: 'Governance Champion',
+      vp: 'DataIQ360 gives your internal audit team an always-on procurement fraud scoring model and beneficiary anomaly detection engine — catching irregularities before the AGSA audit cycle reveals them, and generating the documented evidence chain that supports disciplinary and recovery proceedings.'
+    },
+    {
+      title: 'POPIA Information Officer',
+      role: 'Compliance Gatekeeper',
+      vp: 'DataTrust360 maps every citizen data processing pipeline, enforces POPIA-aligned data quality and purpose limitation at the pipeline layer, and produces the live data processing register your Information Officer needs to respond to an Information Regulator inquiry within days — not weeks of manual reconstruction.'
+    },
+    {
+      title: 'CIO / Head of ICT / Head of Data Analytics',
+      role: 'Technical Champion',
+      vp: 'iDbase360 deploys on-premise within your existing government infrastructure — no cloud connectivity required, no data sovereignty risk. DataForge360 manages the platform health and integration across your BAS, PERSAL, LOGIS, and department-specific systems so your ICT team carries no additional operational load.'
+    },
+    {
+      title: 'Head of Supply Chain Management / SCM Director',
+      role: 'Procurement Compliance Buyer',
+      vp: 'DataIQ360 scores every procurement transaction for fraud risk before award — detecting split orders, connected-party supplier relationships, and bid rotation patterns that manual SCM processes miss — and generating the documented audit trail that supports PPPFA compliance evidence.'
+    }
+  ],
+
+  useCases: [
+    {
+      n: 1,
+      name: 'Grant & Social Benefits Fraud Detection',
+      persona: 'Director-General / CFO / Head of Grant Administration / Chief Audit Executive',
+      entryQ: '"When your department processes its monthly grant payment run, at what point in that process are suspicious or anomalous beneficiary records identified and removed — before the payment is made, or after? And what is your best estimate of the annual value of fraudulent or erroneous grant payments that are currently being made before detection?"',
+      outcome: 'A Southern African development agency (NDA) deployed a DataIQ360-equivalent beneficiary reconciliation model that identified 14,000 duplicate beneficiaries across three payment systems — representing an estimated R420 million in annual overpayments — within the first 90 days of deployment. A SA national department (NDA) deployed DataIQ360 pre-payment screening that detected R47 million in irregular split orders before disbursement in its first operational quarter, eliminating a class of AGSA finding that had recurred for three consecutive audit cycles.',
+      entry: 'DataIQ360 Grant Fraud Detection + DataTrust360 PFMA-compliant audit documentation. Highest urgency and most direct irregular expenditure reduction story in the sector. The business case is immediate: every fraudulent payment detected before disbursement is a rand saved and an audit finding avoided.'
+    },
+    {
+      n: 2,
+      name: 'Procurement Fraud & SCM Analytics',
+      persona: 'CFO / SCM Director / Chief Audit Executive / Director-General',
+      entryQ: '"In your last financial year, how many procurement transactions were flagged as irregular by your SCM team or internal audit — and how many of those were identified before the contract was awarded versus after payment had already been made? And do you currently have a system that scores every supplier for fraud risk and compliance status before award?"',
+      outcome: 'The City of Johannesburg\'s internal audit unit (NDA) piloted a DataIQ360-equivalent supplier analytics model that identified 340 suppliers with suspicious registration patterns — including 89 with shared banking details or connected director relationships — representing contracts totalling over R180 million placed under review. A SA provincial department (NDA) implemented DataIQ360 procurement fraud screening detecting R47 million in irregular split orders before commitment, eliminating the most common recurring category in its AGSA management letter.',
+      entry: 'DataIQ360 Procurement Analytics + DataTrust360 PPPFA compliance documentation. One of the strongest ROI narratives in the sector: every irregular expenditure item detected before payment is a PFMA finding avoided, a rand recovered, and personal liability mitigated for the accounting officer.'
+    },
+    {
+      n: 3,
+      name: 'AGSA Audit Remediation & Data Quality Governance',
+      persona: 'Director-General / CFO / Chief Audit Executive / CIO',
+      entryQ: '"How many data quality or documentation findings appeared in your most recent AGSA management letter — and how many of those are repeat findings that have appeared in two or more consecutive audit cycles? And when your finance team prepares your annual financial statements, how many manual reconciliation steps are required between your BAS, PERSAL, and LOGIS data?"',
+      outcome: 'A SA metropolitan municipality (NDA) eliminated 8 of 11 recurring AGSA data quality findings within one financial year after implementing DataTrust360 automated quality rules across its BAS and PERSAL data pipelines. A SA national department (NDA) reduced its annual financial statement preparation time from 18 person-days to 3 person-days using DataFlow360 automated reconciliation — eliminating 4 recurring AGSA reconciliation errors and freeing the finance team for analytical work rather than manual data stitching.',
+      entry: 'DataTrust360 AGSA Audit Readiness Assessment — fixed fee R150,000–R280,000, 4–6 weeks. Structured as a professional consulting engagement, typically below competitive tender thresholds. Produces a board-ready gap analysis the department uses regardless of subsequent platform decision.'
+    },
+    {
+      n: 4,
+      name: 'Service Delivery Reporting & Performance Analytics',
+      persona: 'Director-General / Deputy DG / Head of Strategy & M&E / City Manager',
+      entryQ: '"How long does it take your team to produce the quarterly performance report submitted to DPME or your oversight authority — and how confident are you that every figure in that report can be traced back to a verified source document? And when your Minister or Mayor asks for a real-time service delivery performance update, how long does that take your team to produce?"',
+      outcome: 'The City of Cape Town\'s data-driven service delivery monitoring programme reduced the time to generate monthly mayoral performance reports from three weeks to three days, enabling proactive reallocation of resources to underperforming service areas in real time. A sub-Saharan African national health department (NDA) deployed DataFlow360 to automate its district health information system reporting — reducing data preparation time for national health outcome reports by 65% and eliminating the recurring AGSA finding related to health facility performance data completeness.',
+      entry: 'DataFlow360 + DataTrust360 service delivery reporting pipeline. High political urgency: a Minister cannot defend a parliamentary question with data they do not trust. Often fundable from the M&E or strategy budget rather than ICT capital.'
+    },
+    {
+      n: 5,
+      name: 'Ghost Employee & Payroll Fraud Detection',
+      persona: 'CFO / Director-General / Head of Human Resources / Chief Audit Executive',
+      entryQ: '"When last did your department conduct a comprehensive reconciliation of your PERSAL payroll records against your physical establishment list, your biometric access control data, and your Home Affairs population register? And how many of your current AGSA findings relate to payroll controls, employee existence verification, or remuneration compliance?"',
+      outcome: 'A SA national department (NDA) deployed DataIQ360 PERSAL analytics that identified 1,240 employees with inconsistent records across systems — of whom 380 were confirmed ghost employees or overpayment cases — representing over R28 million in annual payroll irregularity. Recovery proceedings were initiated with PFMA-compliant audit documentation generated automatically by DataTrust360.',
+      entry: 'DataIQ360 PERSAL Analytics + DataTrust360 PFMA audit trail. High political urgency: ghost employees are front-page news and carry direct PFMA personal liability for the accounting officer. Often the fastest-moving use case when an AGSA payroll finding has already been issued.'
+    },
+    {
+      n: 6,
+      name: 'POPIA Compliance & Citizen Data Governance',
+      persona: 'POPIA Information Officer / Director-General / CIO / Head of Legal',
+      entryQ: '"How does your department currently document all processing activities involving citizen personal information — and if the Information Regulator conducted an audit of your data processing activities this month, what would your Information Officer present as evidence of POPIA compliance? And for citizen data breach notification, does your department have a documented 72-hour notification workflow?"',
+      outcome: 'A European public sector organisation achieved full regulatory compliance across 4,200 citizen data pipelines using a DataTrust360-equivalent governance platform — eliminating 67 unlawful processing activities and producing a regulator-ready data processing register within 18 months. A SA provincial government department (NDA) deployed DataTrust360 to produce its first complete, auditable citizen data processing register — replacing a manually maintained spreadsheet last updated 14 months prior — and resolving an active Information Regulator inquiry with the documentation generated.',
+      entry: 'DataTrust360 POPIA Readiness Assessment — fixed fee consulting engagement. Almost always below competitive tender thresholds. The Information Regulator\'s active audit programme creates direct, non-deferrable urgency for every government department processing citizen personal information at scale.'
+    }
+  ],
+
+  stages: [
+    {
+      num: 1,
+      story: 'You are opening as a local governance expert who has read their audit report — not as a software vendor. The most effective entry is always through AGSA findings: they are public, quantified, and personally significant to the accounting officer. Read the most recent audit outcome before any contact is made. The story is: "iDbase360 remediates the most common AGSA data quality findings, detects grant and procurement fraud before disbursement, and governs citizen data in POPIA compliance — on SA infrastructure, managed locally, with entry points that fall below most competitive tender thresholds."',
+      actions: [
+        'Read the AGSA audit report and management letter for the target department before any outreach. They are public documents available on the AGSA website. Identify the specific finding categories and whether any are repeat findings.',
+        'Lead outreach with the specific findings: "We saw your management letter referenced data quality failures in your PERSAL reconciliation for the third consecutive year — this is one of the most common patterns we address, and there is a structured approach to eliminating it before the next audit cycle."',
+        'Primary targets: CFO and Chief Audit Executive first — they carry the most direct AGSA accountability and the most personal urgency. DG or City Manager once you have a champion at CFO/CAE level.',
+        'Position the DataTrust360 Audit Readiness Assessment as a professional consulting services engagement — not a technology procurement. At R150,000–R280,000 it typically falls below the competitive tender threshold for professional services in most national departments and municipalities.',
+        'Key events: GovTech SA (Tshwane), AGSA stakeholder forums after audit outcome announcements (October–December is the highest urgency window), SALGA conference for municipal targets.'
+      ],
+      blockers: [
+        {
+          q: '"All our technology procurement goes through a formal tender process — we cannot engage outside of that."',
+          m: 'The DataTrust360 Audit Readiness Assessment is a professional consulting services engagement — not a technology procurement or a software licence. At R150,000–R280,000, it typically falls below the competitive tender threshold for professional services in most national departments and metropolitan municipalities. It produces a current-state gap analysis that your department uses regardless of which platform or vendor you subsequently choose for the implementation phase — so it is genuinely procurement-neutral. Can we confirm with your SCM team which procurement category this falls under and what the applicable threshold is?'
+        },
+        {
+          q: '"We need to go through SITA for any technology solution."',
+          m: 'Two pathways worth exploring in parallel. First, the DataTrust360 Assessment is a professional consulting engagement and typically does not require SITA involvement — it is a services procurement, not a technology acquisition. Second, for the full managed service implementation, we can engage through the relevant SITA transversal contracts framework as an approved implementation partner. Many of the technology platforms iDbase360 deploys are already available on SITA transversal catalogues. Can we establish which specific SITA pathway applies to your department\'s situation while starting the consulting Assessment locally?'
+        }
+      ]
+    },
+    {
+      num: 2,
+      story: 'You are a trusted public sector governance advisor — not a vendor. Government officials respond to advisors who understand the PFMA, the AGSA process, and the political consequences of a qualified opinion. The story is: "Before we recommend anything, we need to understand your specific audit exposure, your data infrastructure, and where the biggest governance and service delivery risks sit. Most departments at this stage have three or four foundational data problems that, if resolved, would materially change their audit outcome and reduce the accounting officer\'s personal liability."',
+      actions: [
+        'Structure the 60-minute discovery call: institutional context (10 min) → AGSA findings and irregular expenditure deep-dive (20 min) → fraud and POPIA exposure (15 min) → systems landscape and data architecture (10 min) → budget and procurement context (5 min)',
+        'Quantify the irregular expenditure before leaving Stage 2: disclosed irregular expenditure figure × proportion attributable to data quality or SCM failures = the annual financial exposure that iDbase360 directly addresses',
+        'Map the procurement pathway early: consulting engagement route (fastest — below competitive tender threshold), professional services quotation process, or full technology tender. Understanding this at Stage 2 prevents a late-stage procurement surprise.',
+        'Identify whether SITA is in scope for the implementation phase — for national departments this is often mandatory and affects the commercial structure',
+        'Engage all three governance layers simultaneously: CFO/DG (accounting officer urgency), Chief Audit Executive (governance champion), POPIA Information Officer (compliance urgency and often fastest procurement pathway)'
+      ],
+      blockers: [
+        {
+          q: '"Our budget is fully committed for this financial year — this would need to go into next year\'s MTEF submission."',
+          m: 'That is the most common starting position in government and it is rarely the final answer. Three things to explore: (1) The DataTrust360 Assessment is typically fundable from existing operational budgets — internal audit, CFO governance improvement, or ICT operational maintenance — without requiring a new MTEF allocation. (2) Departments that have identified a specific AGSA finding or fraud risk can often access a contingency or risk mitigation budget line for a time-bound consulting engagement. (3) The October–March period before financial year-end is often when underspent budget is available for commitments. Can we discuss with your CFO which existing budget line is most appropriate for a professional consulting engagement of this scope?'
+        }
+      ]
+    },
+    {
+      num: 3,
+      story: 'You have a quantified audit or fraud exposure and an engaged accounting officer or CFO. The story is: "We know what the AGSA findings are costing in irregular expenditure disclosure, in political capital, and in personal PFMA liability. We know the data infrastructure that exists to address it. Here is the consulting engagement that produces a board-ready remediation roadmap in 4–6 weeks — and here is the fraud detection capability that starts preventing irregular expenditure before the next payment run."',
+      actions: [
+        'Propose the DataTrust360 Audit Readiness Assessment as the formal entry point: fixed fee R150,000–R280,000, 4–6 weeks, output is a board/EXCO-ready current state assessment and prioritised remediation roadmap',
+        'Confirm the Assessment can be sourced as a professional consulting services engagement under existing procurement policy — this removes the 3–6 month tender delay',
+        'Engage the CFO, Chief Audit Executive, and POPIA Information Officer simultaneously on the three-track urgency: AGSA data quality (CFO), fraud detection (CAE), POPIA compliance (Information Officer)',
+        'For fraud detection use cases: propose a scoped proof of value on one grant payment run or one procurement dataset — the results on real data make the business case self-evident',
+        'Register the opportunity with the iDbase360 commercial team for tracking and to ensure the correct procurement pathway is supported from the start'
+      ],
+      blockers: [
+        {
+          q: '"The Information Regulator has not contacted us yet — POPIA is not an urgent priority for this department."',
+          m: 'The Information Regulator\'s audit programme is targeting large public sector data processors specifically — departments that process citizen personal information at scale are at the front of the queue, not the back. The risk is not whether you will be contacted, but whether you will be ready when you are. A department that can present a complete, accurate data processing register and a documented breach notification workflow on the day of an inspection is in a categorically different position from one that cannot. Given that your department processes [personal data categories from their context], the question is not whether POPIA is relevant — it is whether you want to be ready before or after the Inspector arrives. The Assessment we are proposing specifically produces the documentation your Information Officer needs.'
+        }
+      ]
+    },
+    {
+      num: 4,
+      story: 'You are presenting a governance risk reduction and irregular expenditure prevention case — not a technology investment case. The story is: "Here is what the AGSA findings are costing your department in irregular expenditure disclosure, audit qualification risk, and political exposure. Here is what a DataIQ360 fraud detection deployment could have prevented in your last financial year. And here is the investment — structured as a professional services and managed data estate engagement that your SCM team can process through the appropriate procurement pathway."',
+      actions: [
+        'Lead the executive summary with their AGSA finding count and their disclosed irregular expenditure figure — not platform features. Frame it explicitly: "Your department disclosed R X million in irregular expenditure last year. DataIQ360 procurement analytics, applied to your supplier and payment data, would have identified an estimated R Y million of that before commitment."',
+        'PFMA personal liability framing — used respectfully, not as a threat: "Accounting officers are personally accountable under PFMA Section 38 for maintaining effective internal control systems. DataTrust360 provides documented evidence that a proactive, technology-assisted governance programme was in place — which is relevant if an expenditure item is subsequently investigated."',
+        'POPIA enforcement section in every public sector proposal — the Information Regulator\'s active audit programme creates non-deferrable urgency alongside the commercial case',
+        'Procurement pathway section: clearly document the recommended commercial pathway (consulting engagement, professional services quotation, or technology tender), the applicable NT threshold, and the procurement timeline',
+        'On-premise architecture page: diagram showing iDbase360 deployed within the department\'s existing government infrastructure — no cloud connectivity, no data sovereignty risk, SITA-compatible architecture'
+      ],
+      blockers: [
+        {
+          q: '"The total contract value triggers a formal competitive tender — we cannot award directly, and that process will take 6–9 months."',
+          m: 'Two structured approaches. First, a phased engagement design: the DataTrust360 Assessment (Phase 1, below competitive tender threshold, approvals in 2–4 weeks) followed by a scoped Proof of Value on one data domain (Phase 2, also potentially below threshold, contracted separately). Each phase is independently useful — the department has a deliverable and a decision point before committing to the next phase. Second, if the full implementation does require a formal tender, iDbase360 can help your team structure the tender specification to reflect genuine operational requirements — data quality governance for AGSA compliance, POPIA data processing register capability, pre-payment fraud screening — which benefits the institution regardless of which vendor ultimately wins. Would a phased approach work within your current procurement framework?'
+        }
+      ]
+    },
+    {
+      num: 5,
+      story: 'Finalising a governance and data estate partnership. CSD registration, B-BBEE compliance, and tax clearance are hard gates — not administrative formalities. The POPIA Operator Agreement is a legal requirement before any citizen personal data is accessed. These must be in hand before any commercial conversation finalises.',
+      actions: [
+        'CSD (Central Supplier Database) registration is mandatory for any national or provincial department engagement — confirm current registration number and provide to the SCM team for vendor verification',
+        'B-BBEE compliance certificate must be current and verified through the B-BBEE Commission. Mining Charter equivalents apply for SOEs with sectoral requirements.',
+        'POPIA Section 20 Operator Agreement must be executed before any citizen personal information is accessed by the iDbase360 team — non-negotiable, required by legislation',
+        'Tax clearance certificate (good standing) must be current — request the pin from SARS and provide to the SCM team',
+        'For municipalities: confirm MFMA Section 36 compliance position if any deviation from competitive bidding is proposed — the municipal CFO must sign the deviation motivation and it must be reported to the council'
+      ],
+      blockers: [
+        {
+          q: '"Procurement says iDbase360 is not on the National Treasury CSD preferred supplier list."',
+          m: 'iDbase360 is CSD-registered and the registration number is available immediately. We provide a complete vendor compliance pack designed for SCM team verification: CSD registration confirmation, B-BBEE certificate, tax clearance pin, company registration documents, audited financial statements, and a reference list of comparable public sector engagements. This pack is specifically designed to give your SCM practitioner everything needed to complete vendor verification in a single submission. Can we send it directly to the SCM practitioner\'s email address to run alongside the commercial conversation?'
+        }
+      ]
+    },
+    {
+      num: 6,
+      story: 'The contract is signed. The first deliverable that changes the department\'s position is a DataTrust360 data quality dashboard showing the AGSA-findable data quality failures from the most recent management letter — addressed, documented, and ready for AG verification at the next audit visit. That moment is when the accounting officer understands what this partnership is worth.',
+      actions: [
+        'POPIA Operator Agreement must be executed before any citizen data is accessed — required by legislation, not optional. Ensure this is signed on or before the kick-off date.',
+        'Align implementation milestones to the departmental financial year calendar and the AGSA audit cycle — not the iDbase360 delivery calendar. The next AGSA audit preparation window is the first hard milestone.',
+        'Within 90 days: DataTrust360 data quality rules covering the top 3 recurring AGSA findings — live, documented, and able to be presented to the AGSA as evidence of proactive remediation',
+        'Within 90 days: first DataIQ360 fraud screening run on the most recent grant payment or procurement dataset — results briefed to the Chief Audit Executive with documented findings',
+        'Reference ask timing: after the first AGSA management letter following deployment shows a reduction in data quality findings — that is when the accounting officer is most willing to share the story'
+      ],
+      blockers: []
+    }
+  ],
+
+  discoveryQs: [
+    {
+      topic: 'AGSA Audit Findings',
+      q: '"In your most recent AGSA management letter, how many findings related to data quality, missing documentation, or inability to reconcile figures between systems — and how many of those are repeat findings that have appeared in two or more consecutive audit cycles?"',
+      qualifies: 'Audit remediation urgency and depth of the governance problem. Repeat findings signal systemic data quality failures, not one-off errors — and they carry escalating political and personal liability consequences for the accounting officer.'
+    },
+    {
+      topic: 'Irregular Expenditure',
+      q: '"What was your department\'s disclosed irregular expenditure figure in the most recent financial year — and what proportion of that is attributable to SCM process failures or documentation quality failures versus operational programme expenditure?"',
+      qualifies: 'Financial exposure and the specific intervention type needed: procurement fraud detection (DataIQ360) versus data quality and documentation governance (DataTrust360). High SCM component = procurement analytics entry point.'
+    },
+    {
+      topic: 'Grant or Beneficiary Fraud',
+      q: '"When your department processes its monthly grant or beneficiary payment run, at what point in that process are suspicious or anomalous records identified and removed — before payment, or after? And does your department have an automated system that screens every payment before disbursement?"',
+      qualifies: 'Pre-payment fraud detection gap. If detection is post-payment, the ROI case is immediate and compelling: every rand detected before disbursement is a rand saved and an audit finding avoided.'
+    },
+    {
+      topic: 'POPIA Compliance',
+      q: '"How does your department currently document all processing activities involving citizen personal information — and if the Information Regulator conducted an audit this month, what would your Information Officer present as evidence of POPIA compliance?"',
+      qualifies: 'POPIA compliance posture and urgency. Almost universal weakness across SA government. The Information Regulator\'s active audit programme targeting large public sector data processors creates direct, non-deferrable urgency.'
+    },
+    {
+      topic: 'Performance Reporting',
+      q: '"How long does it take your team to produce the quarterly performance report submitted to DPME or your oversight authority — and how confident are you that every figure in that report can be traced back to a verified source document?"',
+      qualifies: 'Service delivery reporting automation urgency. If the answer is "weeks" and "not very confident", the DataFlow360 + DataTrust360 reporting pipeline has an immediate and high-value application.'
+    },
+    {
+      topic: 'Systems Landscape',
+      q: '"How many different IT systems does your department pull data from for financial reporting, performance reporting, and service delivery monitoring — and do those systems reconcile automatically or does your team stitch the data together manually for each reporting cycle?"',
+      qualifies: 'System fragmentation and data integration complexity. Most departments have 5–15 systems that do not integrate — each manual reconciliation is a DataFlow360 pipeline opportunity and a source of AGSA data quality risk.'
+    },
+    {
+      topic: 'Procurement Controls',
+      q: '"How does your SCM team currently detect split orders designed to circumvent competitive bidding thresholds — and when a procurement irregularity appears in an AGSA finding, how far back can your team trace the full transaction chain through your procurement system?"',
+      qualifies: 'Procurement fraud detection gap and SCM controls maturity. If split order detection is manual or absent, and transaction traceability is limited, DataIQ360 procurement analytics has an immediate and quantifiable application.'
+    }
+  ]
+});
+
 // ─── RENDER ───────────────────────────────────────────────────────────────────
 // Call these at the end of every data.js save — they refresh the sidebar and home screen.
 buildSidebar();
