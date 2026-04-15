@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>iDbase360 Sales Enablement Hub</title>
+<style>
+:root{--r:#C0272D;--dr:#8B1A1D;--w:#fff;--b:#404040;--m:#737373;--bg:#f5f5f5;--cb:#F4F4F4;--bd:#DDDDDD;--alt:#F9F9F9;--sw:232px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:Calibri,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--b);font-size:14px;line-height:1.5}
+#app{display:flex;height:100vh;overflow:hidden}
+#sb{width:var(--sw);background:var(--dr);flex-shrink:0;display:flex;flex-direction:column;overflow-y:auto}
+#ca{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+#tb{height:50px;background:var(--r);display:flex;align-items:center;padding:0 20px;gap:10px;flex-shrink:0}
+#main{flex:1;overflow-y:auto;padding:22px;background:var(--bg)}
+.sb-hd{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.12)}
+.sb-brand{font-size:18px;font-weight:700;color:#fff;letter-spacing:-0.5px}
+.sb-sub{font-size:10px;color:rgba(255,255,255,0.5);margin-top:1px}
+.sb-lbl{font-size:9px;font-weight:700;color:rgba(255,255,255,0.35);padding:8px 16px 3px;letter-spacing:1px;text-transform:uppercase}
+.sb-i{display:flex;align-items:center;gap:8px;padding:7px 16px;font-size:13px;color:rgba(255,255,255,0.7);cursor:pointer;border-left:3px solid transparent;transition:all .12s;user-select:none}
+.sb-i:hover{background:rgba(255,255,255,0.08);color:#fff}
+.sb-i.on{background:rgba(255,255,255,0.15);color:#fff;border-left-color:#fff;font-weight:600}
+.sb-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3);flex-shrink:0}
+.sb-dot.on{background:#fff}
+.sb-hr{margin:4px 16px;border:none;border-top:1px solid rgba(255,255,255,0.1)}
+.tb-t{font-size:15px;font-weight:700;color:#fff}
+.tb-c{font-size:12px;color:rgba(255,255,255,0.6);margin-left:4px}
+.tb-pill{background:rgba(255,255,255,0.18);color:#fff;font-size:11px;padding:2px 9px;border-radius:10px;margin-left:auto;white-space:nowrap}
+h1.pt{font-size:21px;color:var(--b);margin-bottom:4px}
+.pm{font-size:12px;color:var(--m);margin-bottom:20px}
+h2.sh{font-size:15px;color:var(--r);padding-bottom:7px;border-bottom:2px solid var(--r);margin:22px 0 13px;font-weight:700}
+h3.suh{font-size:13px;color:var(--b);font-weight:700;margin:14px 0 7px}
+p.body{font-size:13px;color:var(--b);line-height:1.6;margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:16px}
+.sc{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:14px 16px;cursor:pointer;border-left:4px solid var(--r);transition:box-shadow .15s}
+.sc:hover{box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.sc h3{font-size:14px;margin-bottom:3px;color:var(--b)}
+.sc p{font-size:12px;color:var(--m)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:var(--r);color:#fff;padding:8px 11px;text-align:left;font-size:12px;font-weight:700}
+.tbl td{padding:8px 11px;border-bottom:1px solid var(--bd);vertical-align:top;line-height:1.5}
+.tbl tr:nth-child(even) td{background:var(--alt)}
+.callout{display:flex;border-radius:6px;overflow:hidden;margin:12px 0}
+.cl-lbl{background:var(--r);color:#fff;font-size:9px;font-weight:700;letter-spacing:.8px;padding:10px 7px;writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);display:flex;align-items:center;min-width:26px;text-transform:uppercase}
+.cl-body{background:var(--cb);padding:11px 13px;flex:1;font-size:13px;color:var(--b);line-height:1.6}
+.blk{background:#FDF2F2;border:1px solid #f5c5c5;border-radius:6px;margin:7px 0;overflow:hidden}
+.blk-hd{display:flex;align-items:center;gap:9px;padding:9px 13px;cursor:pointer;user-select:none}
+.blk-badge{background:var(--dr);color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.5px;flex-shrink:0;text-transform:uppercase}
+.blk-q{font-size:13px;color:var(--b);font-style:italic;flex:1;line-height:1.4}
+.blk-chev{color:var(--m);font-size:11px;transition:transform .2s;flex-shrink:0}
+.blk-body{padding:10px 13px 11px;font-size:13px;color:var(--b);line-height:1.6;display:none;border-top:1px solid #f5c5c5}
+.blk-body strong{color:var(--dr)}
+.blk.op .blk-chev{transform:rotate(180deg)}
+.blk.op .blk-body{display:block}
+.stage-bar{background:var(--r);color:#fff;padding:10px 15px;border-radius:6px 6px 0 0;display:flex;align-items:center;justify-content:space-between}
+.stage-bar .sl{font-size:15px;font-weight:700}
+.stage-bar .sp{background:var(--dr);font-size:11px;padding:2px 8px;border-radius:10px}
+.stage-body{background:#fff;border:1px solid var(--bd);border-top:none;padding:14px 15px;border-radius:0 0 6px 6px;margin-bottom:13px}
+.crit-i{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}
+.crit-i:last-child{border:none}
+.chk{width:18px;height:18px;border:2px solid var(--bd);border-radius:3px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;margin-top:1px;font-size:12px;font-weight:700}
+.chk.done{background:var(--r);border-color:var(--r);color:#fff}
+.ct{font-size:13px;color:var(--b)}
+.ch{font-size:11px;color:var(--m);margin-top:2px;line-height:1.5}
+.tool-panel{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:20px;max-width:760px}
+.tool-lbl{font-size:11px;font-weight:700;color:var(--m);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+select.tsel{width:100%;padding:8px 11px;border:1.5px solid var(--bd);border-radius:6px;font-size:14px;color:var(--b);background:#fff;font-family:inherit;margin-bottom:14px;cursor:pointer}
+select.tsel:focus{outline:2px solid var(--r);border-color:var(--r)}
+.dq-card{background:#fff;border:1px solid var(--bd);border-radius:6px;padding:12px 14px;margin-bottom:9px}
+.dq-topic{font-size:10px;font-weight:700;color:var(--r);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.dq-q{font-size:14px;color:var(--b);font-style:italic;margin-bottom:6px;line-height:1.5}
+.dq-qual{font-size:12px;color:var(--m);border-top:1px solid var(--bd);padding-top:6px;line-height:1.5}
+.per-card{background:#fff;border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+.per-hd{background:var(--r);padding:11px 13px}
+.per-hd h4{font-size:13px;font-weight:700;color:#fff}
+.per-hd .pr{font-size:10px;color:rgba(255,255,255,0.65);margin-top:1px}
+.per-bd{padding:11px 13px}
+.per-lbl{font-size:9px;font-weight:700;color:var(--r);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.per-txt{font-size:12px;color:var(--b);line-height:1.5;margin-bottom:9px}
+.uc-wrap{border:1px solid var(--bd);border-radius:6px;margin-bottom:9px;overflow:hidden}
+.uc-hd{display:flex;align-items:center;gap:9px;padding:10px 13px;cursor:pointer;background:#fff;user-select:none}
+.uc-n{background:var(--r);color:#fff;font-size:10px;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.uc-name{font-size:13px;font-weight:600;color:var(--b);flex:1}
+.uc-persona{font-size:11px;color:var(--m);background:var(--cb);padding:1px 7px;border-radius:10px}
+.uc-chev{color:var(--m);font-size:11px;transition:transform .2s}
+.uc-bd{background:#fafafa;border-top:1px solid var(--bd);padding:13px;display:none}
+.uc-bd.op{display:block}
+.uc-rl{font-size:10px;font-weight:700;color:var(--r);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px;margin-top:9px}
+.uc-rt{font-size:13px;color:var(--b);line-height:1.6}
+.iq{background:var(--cb);border-left:3px solid var(--r);padding:8px 11px;border-radius:0 4px 4px 0;font-size:13px;font-style:italic;line-height:1.5;color:var(--b);margin:8px 0}
+.qr-filter input{width:100%;padding:8px 11px;border:1.5px solid var(--bd);border-radius:6px;font-size:13px;font-family:inherit;margin-bottom:14px}
+.qr-filter input:focus{outline:2px solid var(--r);border-color:var(--r)}
+.home-hero{background:var(--r);color:#fff;border-radius:8px;padding:22px 26px;margin-bottom:22px}
+.home-hero h2{font-size:19px;font-weight:700;margin-bottom:5px}
+.home-hero p{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;max-width:580px}
+.tool-card{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:14px 16px;cursor:pointer;transition:box-shadow .15s;display:flex;gap:12px;align-items:flex-start}
+.tool-card:hover{box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+.tool-num{width:28px;height:28px;border-radius:50%;background:var(--r);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.tool-info h4{font-size:14px;font-weight:700;margin-bottom:2px;color:var(--b)}
+.tool-info p{font-size:12px;color:var(--m);line-height:1.5}
+.pip-stages{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+.pip-s{flex:1;min-width:80px;border:2px solid var(--bd);border-radius:6px;padding:8px 9px;cursor:pointer;transition:all .12s;text-align:center;user-select:none}
+.pip-s.act{border-color:var(--r);background:#FFF0F0}
+.pip-s .sn{font-size:10px;color:var(--m);margin-bottom:2px}
+.pip-s .snm{font-size:12px;font-weight:700;color:var(--b)}
+.pip-s .sp{font-size:11px;color:var(--r);margin-top:2px;font-weight:700}
+.info-box{background:#EEF4FF;border:1px solid #B5D4F4;border-radius:6px;padding:11px 14px;font-size:13px;color:#0C447C;margin-bottom:14px;line-height:1.5}
+.sec-lbl{font-size:10px;font-weight:700;color:var(--m);text-transform:uppercase;letter-spacing:.5px;margin:18px 0 10px;padding-bottom:4px;border-bottom:1px solid var(--bd)}
+.co-story{background:var(--cb);border-left:3px solid var(--r);padding:10px 13px;border-radius:0 4px 4px 0;font-size:13px;color:var(--b);line-height:1.6;margin-bottom:12px}
+.co-lbl{font-size:10px;font-weight:700;color:var(--r);text-transform:uppercase;letter-spacing:.5px;margin:12px 0 5px}
+.co-list{list-style:none;margin-bottom:8px}
+.co-list li{padding:3px 0 3px 14px;font-size:13px;color:var(--b);position:relative;line-height:1.5}
+.co-list li::before{content:'--';color:var(--r);position:absolute;left:0}
+.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.prog-bar{flex:1;height:6px;background:var(--bd);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:var(--r);border-radius:3px;transition:width .3s}
+.prog-pct{font-size:12px;color:var(--m);min-width:35px;text-align:right}
+.tab-nav{display:flex;gap:0;border-bottom:2px solid var(--bd);margin-bottom:20px}
+.tab{padding:9px 16px;font-size:13px;color:var(--m);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .12s;user-select:none}
+.tab.on{color:var(--r);border-bottom-color:var(--r);font-weight:700}
+</style>
+</head>
+<body>
+<div id="app">
+  <nav id="sb">
+    <div class="sb-hd">
+      <div class="sb-brand">iDbase360</div>
+      <div class="sb-sub">Sales Enablement Hub -- April 2026</div>
+    </div>
+    <div style="padding:6px 0">
+      <div class="sb-i on" data-nav="home"><span class="sb-dot on"></span>Home</div>
+      <div class="sb-i" data-nav="strategy"><span class="sb-dot"></span>Strategy Overview</div>
+    </div>
+    <hr class="sb-hr">
+    <div class="sb-lbl">Sector Playbooks</div>
+    <div id="sb-sectors"></div>
+    <hr class="sb-hr">
+    <div class="sb-lbl">Interactive Tools</div>
+    <div class="sb-i" data-nav="dealcoach"><span class="sb-dot"></span>Deal Coach</div>
+    <div class="sb-i" data-nav="discovery"><span class="sb-dot"></span>Discovery Bank</div>
+    <div class="sb-i" data-nav="pipeline"><span class="sb-dot"></span>Pipeline Checker</div>
+    <div class="sb-i" data-nav="quickref"><span class="sb-dot"></span>Quick Reference</div>
+  </nav>
+  <div id="ca">
+    <div id="tb">
+      <div class="tb-t" id="tb-title">Home</div>
+      <div class="tb-c" id="tb-crumb"></div>
+      <div class="tb-pill">iDbase360 Sales Enablement Hub</div>
+    </div>
+    <div id="main"></div>
+  </div>
+</div>
+<script>
+// NOTE: Full sector data loaded from data.js - this is the shell + tools only
+// Sector data will be populated vertically via data.js additions
+
+const PC={1:{name:'Prospect',prob:10,criteria:[{t:'Discovery call confirmed and in diary',h:'Calendar invite accepted. In-person preferred for large accounts.'},{t:'Primary contact logged in CRM with full profile',h:'Name, title, direct contact, LinkedIn logged in HubSpot.'},{t:'Company profile researched',h:'Analytics tooling, regulatory exposure, and pain points noted.'}]},2:{name:'Discovery',prob:20,criteria:[{t:'Business problem quantified in rands',h:'At least one use case with an annual cost or risk exposure figure attached.'},{t:'Economic buyer identified and engaged',h:'CDO, CTO, COO, or equivalent named and willing to attend next meeting.'},{t:'Stakeholder map drafted',h:'All four layers: economic buyer, technical champion, compliance gatekeeper, IT gatekeeper.'},{t:'Data landscape understood',h:'Primary data sources, analytics tooling, and integration challenges documented.'}]},3:{name:'Qualified',prob:35,criteria:[{t:'BANT confirmed: Budget, Authority, Need, Timeline',h:'Verbal confirmation from the economic buyer on all four dimensions.'},{t:'Assessment or PoC agreed in principle',h:'Verbal or written agreement - or instruction to provide a formal proposal.'},{t:'PoC success metric agreed in writing',h:'Specific metric and measurement methodology confirmed before work begins.'},{t:'Compliance gatekeeper engaged',h:'POPIA Information Officer, SHE Manager, or sector equivalent introduced.'}]},4:{name:'Proposal',prob:50,criteria:[{t:'Formal proposal submitted and acknowledged',h:'Proposal sent, receipt confirmed, review meeting booked with economic buyer.'},{t:'Commercial pathway confirmed',h:'Opex or capex classification, approval authority, and procurement process documented.'},{t:'POPIA Operator Agreement initiated',h:'Draft Operator Agreement sent to legal team - before any personal data is accessed.'},{t:'Dataiku deal registered with Dataiku EMEA',h:'Co-sell registration submitted. Required before advancing to negotiation stage.'}]},5:{name:'Negotiation',prob:75,criteria:[{t:'All commercial terms agreed in writing',h:'Written confirmation from procurement or the economic buyer.'},{t:'Contract under legal review',h:'Draft SOW or MSA submitted to legal. POPIA Operator Agreement in review.'},{t:'B-BBEE, CSD registration, and tax clearance filed',h:'Current compliance documentation submitted. An expired certificate kills a bid.'},{t:'Vendor onboarding process initiated',h:'iDbase360 registered as approved supplier or vendor registration in progress.'}]},6:{name:'Closed Won',prob:100,criteria:[{t:'Contract signed by both parties',h:'Executed SOW or MSA on file. Effective date confirmed.'},{t:'POPIA Operator Agreement executed',h:'Signed before any personal information is accessed. Non-negotiable.'},{t:'Dataiku co-sell credit registered and claimed',h:'Dataiku EMEA notified. Partner portal updated. Revenue attributed.'},{t:'Implementation kick-off date confirmed',h:'Delivery team and client have agreed a start date. Client stakeholders briefed.'}]}};
+
+// SECTORS array - populated by data.js
+let SECTORS = [];
+
+const STRATEGY={pillars:[{title:'Managed Delivery, Not Project Delivery',body:'Every iDbase360 engagement is structured as a monthly recurring service - not a time-and-materials project. We are accountable for outcomes over time, not for deliverables at a point in time.'},{title:'Local Presence, SA-Specific Expertise',body:'iDbase360 operates from Sandton with a team that understands POPIA, the Auditor-General requirements, load-shedding operational impact, MHSA safety obligations, and the nuances of South African regulated industries.'},{title:'Governed from Day One',body:'DataTrust360 data governance is embedded in every engagement. Client data is lineage-documented, quality-managed, and POPIA-compliant as a default.'},{title:'Platform-Agnostic, Outcome-Focused',body:'iDbase360 delivers the Complete Managed Data Estate across four integrated layers: platform, engineering, governance, and intelligence. Cloud-native, POPIA-aligned, AI-ready, and South Africa-first.'},{title:'Sector Depth, Not Breadth',body:'Specialised use cases, reference outcomes, and regulatory knowledge across eight SA verticals. The only locally-packaged, full-estate managed data service of its kind in South Africa.'}],services:[{name:'DataForge360',sub:'Platform Managed Services',desc:'End-to-end management of the AI and data platform environment: infrastructure provisioning, version management, security configuration, user administration, integration management, performance monitoring, and SLA assurance.',range:'R80,000 - R180,000 / month',trigger:'Client has or is buying a platform but lacks internal managed ops capability.'},{name:'DataTrust360',sub:'Data Governance & Quality',desc:'Data quality rules and automated enforcement, data lineage documentation, PII detection and POPIA-aligned processing controls, data catalogue management, audit-ready documentation for AGSA, SARB, FSCA, MHSA, and Carbon Tax Act compliance.',range:'R60,000 - R120,000 / month',trigger:'Client has compliance exposure, a recent audit finding, or a CDO mandate to govern data assets.'},{name:'DataFlow360',sub:'Data Engineering Services',desc:'Build and manage data pipelines: source system integration (SAP, PERSAL, BAS, POS, OT historians, telematics, CDR), medallion architecture, pipeline monitoring and quality assurance, and data transformation for batch and real-time processing.',range:'R80,000 - R160,000 / month',trigger:'Client needs to integrate data from multiple source systems or requires data engineering capacity without hiring a full internal team.'},{name:'DataIQ360',sub:'Analytics, Intelligence & AI',desc:'Full lifecycle AI and ML model delivery: use case scoping, feature engineering, model development, production deployment and API integration, model monitoring and drift detection, automated retraining, and ongoing performance management.',range:'R120,000 - R350,000 / month',trigger:'Client has a specific AI problem to solve, an existing model estate to govern and monitor, or a board mandate to demonstrate AI ROI.'},{name:'AI Readiness Assessment',sub:'Universal Entry Point',desc:'Structured, fixed-fee, 4-week consulting engagement: current data maturity assessment, AI tooling landscape, governance posture, and highest-value AI use cases. Output: board-ready gap analysis, regulatory exposure summary, and prioritised managed services roadmap.',range:'R150,000 - R280,000 (fixed fee)',trigger:'Universal - every sector, every organisation. This is always Step 1.'}],competition:[{them:'Global SIs (Deloitte, Accenture, EY)',us:'Global SIs bill time-and-materials at international rates, with offshore delivery and no POPIA-first SA regulatory expertise. iDbase360: fixed monthly fee, SA-first, with POPIA embedded into every pillar, local delivery accountability, and an end-to-end estate ownership model that no global SI offers.'},{them:'In-house data science teams',us:'Internal teams cannot proactively monitor, modernise, and build simultaneously. iDbase360 is the always-on managed estate layer -- platform to intelligence -- that operates continuously while the internal team focuses on strategy.'},{them:'Pure-play AI platform vendors',us:'Technology vendors sell licences. They do not manage the operational environment, govern the data, maintain the pipelines, or monitor the analytics estate. iDbase360 provides the complete managed layer -- platform, engineering, governance, and intelligence -- that converts a technology investment into a trusted data estate.'},{them:'Local IT services companies',us:'General-purpose IT firms deliver fragmented point solutions — a pipeline here, a dashboard there — with no single accountability for the full estate. iDbase360 owns the outcome across all four layers: platform, engineering, governance, and intelligence.'},{them:'DIY (open source + internal build)',us:'Building a data estate internally means hiring and retaining platform engineers, data engineers, governance specialists, and BI developers simultaneously — while keeping them current on POPIA, cloud architecture, and AI tooling. iDbase360 delivers all four layers as a single managed service at a fixed monthly cost, with defined SLAs and a closed-loop improvement model that makes the estate healthier every month.'}]};
+
+let currentNav='home',currentSector=null,currentTab='overview',coachSector='',coachStage=1,discSector='',checkStage=1,qrFilter='',pipeChecks={};
+
+function nav(id,sector){
+  currentNav=id;currentSector=sector||null;
+  document.querySelectorAll('.sb-i').forEach(el=>{
+    const on=el.dataset.nav===id||(sector&&el.dataset.nav===sector);
+    el.classList.toggle('on',on);
+    const d=el.querySelector('.sb-dot');if(d)d.classList.toggle('on',on);
+  });
+  const titles={home:'Home',strategy:'Strategy Overview',dealcoach:'Deal Coach',discovery:'Discovery Question Bank',pipeline:'Pipeline Stage Checker',quickref:'Quick Reference -- All Sectors'};
+  document.getElementById('tb-title').textContent=sector?SECTORS.find(s=>s.id===sector)?.name||id:(titles[id]||id);
+  document.getElementById('tb-crumb').textContent=sector?'-- Sector Playbook':'';
+  render();
+}
+function navSector(id,tab){currentSector=id;currentTab=tab||'overview';nav('sector',id);}
+function switchTab(t){
+  currentTab=t;
+  document.querySelectorAll('.tab').forEach(el=>el.classList.toggle('on',el.dataset.tab===t));
+  const c=document.getElementById('tab-content');if(c){c.innerHTML=renderTabContent(currentSector,t);bindEvents();}
+}
+function toggleBlk(hd){hd.closest('.blk').classList.toggle('op');}
+function toggleUC(hd){const bd=hd.nextElementSibling;const ch=hd.querySelector('.uc-chev');const o=bd.classList.contains('op');bd.classList.toggle('op',!o);if(ch)ch.style.transform=o?'':'rotate(180deg)';}
+
+function buildSidebar(){
+  const c=document.getElementById('sb-sectors');c.innerHTML='';
+  SECTORS.forEach(s=>{const el=document.createElement('div');el.className='sb-i';el.dataset.nav=s.id;el.innerHTML='<span class="sb-dot"></span>'+s.name;el.onclick=()=>navSector(s.id);c.appendChild(el);});
+}
+
+function render(){
+  const m=document.getElementById('main');
+  if(currentNav==='home')m.innerHTML=renderHome();
+  else if(currentNav==='strategy')m.innerHTML=renderStrategy();
+  else if(currentNav==='sector')m.innerHTML=renderSector(currentSector);
+  else if(currentNav==='dealcoach')m.innerHTML=renderDealCoach();
+  else if(currentNav==='discovery')m.innerHTML=renderDiscovery();
+  else if(currentNav==='pipeline')m.innerHTML=renderPipeline();
+  else if(currentNav==='quickref')m.innerHTML=renderQuickRef();
+  bindEvents();
+}
+
+function renderHome(){
+  const loaded=SECTORS.length>0;
+  return '<div class="home-hero"><h2>iDbase360 Sales Enablement Hub</h2><p>Your complete field guide -- 8 sector playbooks, 4 interactive sales tools, and the full data estate strategy. Built for pre-meeting prep, live deal coaching, and onboarding new sales executives.</p></div>'
+  +(loaded?'<div class="sec-lbl">Sector Playbooks</div><div class="grid2" style="margin-bottom:22px">'+SECTORS.map(s=>'<div class="sc" onclick="navSector(\''+s.id+'\')"><h3>'+s.name+'</h3><p>'+s.tagline+'</p></div>').join('')+'</div>':'<div class="info-box">Sector playbook data is loading. Add data.js to the same folder to enable all 8 sectors.</div>')
+  +'<div class="sec-lbl">Interactive Sales Tools</div><div class="grid2"><div class="tool-card" onclick="nav(\'dealcoach\')"><div class="tool-num">1</div><div class="tool-info"><h4>Deal Coach</h4><p>Select sector + pipeline stage to get the exact story, actions, and blockers for where you are right now.</p></div></div><div class="tool-card" onclick="nav(\'discovery\')"><div class="tool-num">2</div><div class="tool-info"><h4>Discovery Question Bank</h4><p>Select a sector to get the full question bank with what each question qualifies for Stage 2 calls.</p></div></div><div class="tool-card" onclick="nav(\'pipeline\')"><div class="tool-num">3</div><div class="tool-info"><h4>Pipeline Stage Checker</h4><p>Confirm all exit criteria are met before advancing a deal to the next stage. Applies to all sectors.</p></div></div><div class="tool-card" onclick="nav(\'quickref\')"><div class="tool-num">4</div><div class="tool-info"><h4>Quick Reference</h4><p>Opening questions, personas, value propositions, and entry points -- all sectors in one searchable view.</p></div></div></div>';
+}
+
+function renderStrategy(){
+  return '<h1 class="pt">South Africa Managed Services Strategy</h1><p class="pm">iDbase360 -- April 2026 -- Confidential</p><div class="callout"><div class="cl-lbl">Position</div><div class="cl-body">iDbase360 is South Africa\'s specialist Complete Managed Data Estate services provider -- delivering governed, outcome-oriented data, analytics, and intelligence services across leading enterprise platforms, on a fixed monthly fee, with full operational accountability.</div></div>'
+  +'<h2 class="sh">Strategic Pillars</h2><div class="grid2">'+STRATEGY.pillars.map(p=>'<div class="card"><h3 class="suh" style="margin-top:0">'+p.title+'</h3><p class="body">'+p.body+'</p></div>').join('')+'</div>'
+  +'<h2 class="sh">The Managed Services Stack</h2><table class="tbl"><thead><tr><th>Service</th><th>What We Manage</th><th>Entry Trigger</th><th>Indicative Range</th></tr></thead><tbody>'+STRATEGY.services.map(s=>'<tr><td><strong>'+s.name+'</strong><br><span style="font-size:11px;color:var(--m)">'+s.sub+'</span></td><td>'+s.desc+'</td><td>'+s.trigger+'</td><td><strong>'+s.range+'</strong></td></tr>').join('')+'</tbody></table>'
+  +'<h2 class="sh">Competitive Positioning</h2><table class="tbl"><thead><tr><th>Competitive Threat</th><th>iDbase360 Counter-Positioning</th></tr></thead><tbody>'+STRATEGY.competition.map(c=>'<tr><td><strong>'+c.them+'</strong></td><td>'+c.us+'</td></tr>').join('')+'</tbody></table>'
+  +'<h2 class="sh">Year 1 Success Metrics</h2><table class="tbl"><thead><tr><th>Metric</th><th>Year 1 Target</th></tr></thead><tbody><tr><td>Managed Services ARR (total)</td><td><strong>R6M - R12M recurring</strong></td></tr><tr><td>New clients signed</td><td>4 - 8 enterprise clients</td></tr><tr><td>AI Readiness Assessments completed</td><td>6 - 12 Assessments</td></tr><tr><td>Assessment-to-managed-services conversion</td><td><strong>60% or better</strong></td></tr><tr><td>Active qualified pipeline (5x coverage)</td><td>R30M - R60M in qualified pipeline</td></tr><tr><td>Average deal sales cycle</td><td>Under 6 months to signed SOW</td></tr><tr><td>Client retention rate</td><td><strong>90%+ at 12-month renewal</strong></td></tr><tr><td>Services revenue as % of total</td><td>70% or above</td></tr></tbody></table>';
+}
+
+function renderSector(id){
+  const s=SECTORS.find(x=>x.id===id);
+  if(!s)return'<div class="info-box">Sector data for this vertical is not yet loaded. Add the sector data file for this vertical to see the full playbook.</div>';
+  const tabs=['overview','personas','usecases','stages','discovery'];
+  const tl={overview:'Overview',personas:'Personas',usecases:'Use Cases',stages:'Stage-by-Stage',discovery:'Discovery Questions'};
+  return '<h1 class="pt">'+s.name+' Playbook</h1><p class="pm">'+s.tagline+'</p><div class="tab-nav">'+tabs.map(t=>'<div class="tab '+(t===currentTab?'on':'')+'" data-tab="'+t+'" onclick="switchTab(\''+t+'\')">'+tl[t]+'</div>').join('')+'</div><div id="tab-content">'+renderTabContent(id,currentTab)+'</div>';
+}
+
+function renderTabContent(id,tab){
+  const s=SECTORS.find(x=>x.id===id);
+  if(!s)return'';
+  if(tab==='overview')return'<div class="callout"><div class="cl-lbl">Sector</div><div class="cl-body">'+s.tagline+'</div></div><h2 class="sh">The Opening Question</h2><div class="iq">'+s.openingQ+'</div><h2 class="sh">One-Sentence Value Proposition</h2><div class="callout"><div class="cl-lbl">VP</div><div class="cl-body">'+s.vp+'</div></div><h2 class="sh">Managed Service Entry Points</h2><p class="body">'+s.entry+'</p><h2 class="sh">Key Events & Entry Channels</h2><p class="body">'+s.events+'</p>';
+  if(tab==='personas')return'<div class="info-box">Map all personas before advancing past Stage 2. Deals with only a technical champion -- without an economic buyer -- stall at the proposal stage every time.</div><div class="grid2">'+s.personas.map(p=>'<div class="per-card"><div class="per-hd"><h4>'+p.title+'</h4><div class="pr">'+p.role+'</div></div><div class="per-bd"><div class="per-lbl">Value Proposition</div><div class="per-txt">'+p.vp+'</div></div></div>').join('')+'</div>';
+  if(tab==='usecases')return'<div class="info-box">Lead every use case conversation with the specific commercial outcome -- quantified in rands. Never start with the technology.</div>'+s.useCases.map(u=>'<div class="uc-wrap"><div class="uc-hd" onclick="toggleUC(this)"><div class="uc-n">'+u.n+'</div><div class="uc-name">'+u.name+'</div><div class="uc-persona">'+u.persona+'</div><div class="uc-chev">&#9660;</div></div><div class="uc-bd"><div class="uc-rl">Entry Question</div><div class="iq">'+u.entryQ+'</div><div class="uc-rl">Reference Outcome</div><div class="uc-rt">'+u.outcome+'</div><div class="uc-rl">Managed Service Entry Point</div><div class="uc-rt"><strong>'+u.entry+'</strong></div></div></div>').join('');
+  if(tab==='stages')return'<div class="info-box">Use the Deal Coach tool for a guided stage-by-stage view with your specific sector selected.</div>'+s.stages.map(st=>'<div class="stage-bar"><span class="sl">Stage '+st.num+' -- '+PC[st.num].name+'</span><span class="sp">Win Probability: '+PC[st.num].prob+'%</span></div><div class="stage-body"><div class="co-story">'+st.story+'</div><div class="co-lbl">Actions at This Stage</div><ul class="co-list">'+st.actions.map(a=>'<li>'+a+'</li>').join('')+'</ul>'+(st.blockers.length>0?'<div class="co-lbl">Blockers & Objections</div>'+st.blockers.map(b=>'<div class="blk"><div class="blk-hd" onclick="toggleBlk(this)"><span class="blk-badge">BLOCKER</span><span class="blk-q">'+b.q+'</span><span class="blk-chev">&#9660;</span></div><div class="blk-body"><strong>Mitigation: </strong>'+b.m+'</div></div>').join(''):'')+'<div class="co-lbl">Exit Criteria</div>'+PC[st.num].criteria.map(c=>'<div class="crit-i"><div class="chk" onclick="this.classList.toggle(\'done\');this.textContent=this.classList.contains(\'done\')?\'checkmark\':\'\'"></div><div class="crit-txt"><div class="ct">'+c.t+'</div><div class="ch">'+c.h+'</div></div></div>').join('')+'</div>').join('');
+  if(tab==='discovery')return'<div class="info-box">Use these questions in your Stage 2 discovery call. Do not skip the POPIA questions even if the prospect seems primarily commercially oriented.</div>'+s.discoveryQs.map(q=>'<div class="dq-card"><div class="dq-topic">'+q.topic+'</div><div class="dq-q">'+q.q+'</div><div class="dq-qual"><strong>What it qualifies:</strong> '+q.qualifies+'</div></div>').join('');
+  return'';
+}
+
+function renderDealCoach(){
+  return'<div class="tool-panel"><h1 class="pt">Deal Coach</h1><p class="pm">Select your sector and pipeline stage to get the exact story, actions, and blockers for where you are right now.</p><div class="tool-lbl">1. Select Sector</div><select class="tsel" id="coach-sector" onchange="coachSector=this.value;updateCoach()"><option value="">-- Choose a sector --</option>'+SECTORS.map(s=>'<option value="'+s.id+'"'+(coachSector===s.id?' selected':'')+'>'+s.name+'</option>').join('')+'</select><div class="tool-lbl">2. Select Pipeline Stage</div><div class="pip-stages">'+[1,2,3,4,5,6].map(n=>'<div class="pip-s'+(coachStage===n?' act':'')+'" onclick="coachStage='+n+';updateCoach()"><div class="sn">Stage '+n+'</div><div class="snm">'+PC[n].name+'</div><div class="sp">'+PC[n].prob+'%</div></div>').join('')+'</div><div id="coach-output"></div></div>';
+}
+
+function updateCoach(){
+  document.querySelectorAll('.pip-s').forEach((el,i)=>el.classList.toggle('act',i+1===coachStage));
+  const out=document.getElementById('coach-output');if(!out)return;
+  if(!coachSector||!coachStage){out.innerHTML='';return;}
+  const s=SECTORS.find(x=>x.id===coachSector);
+  const stage=s?.stages.find(st=>st.num===coachStage);
+  if(!s||!stage){out.innerHTML='<div class="info-box">Sector data not yet loaded for this vertical.</div>';return;}
+  const prob=PC[coachStage].prob;
+  out.innerHTML='<div style="border-top:2px solid var(--r);padding-top:14px;margin-top:4px"><div class="prog-row"><span style="font-size:12px;color:var(--m);min-width:110px">Win probability</span><div class="prog-bar"><div class="prog-fill" style="width:'+prob+'%"></div></div><span class="prog-pct">'+prob+'%</span></div><div class="co-lbl">The Sales Story at This Stage</div><div class="co-story">'+stage.story+'</div><div class="co-lbl">Key Actions</div><ul class="co-list">'+stage.actions.map(a=>'<li>'+a+'</li>').join('')+'</ul>'+(stage.blockers.length>0?'<div class="co-lbl">Blockers -- click to reveal mitigation</div>'+stage.blockers.map(b=>'<div class="blk"><div class="blk-hd" onclick="toggleBlk(this)"><span class="blk-badge">BLOCKER</span><span class="blk-q">'+b.q+'</span><span class="blk-chev">&#9660;</span></div><div class="blk-body"><strong>Mitigation: </strong>'+b.m+'</div></div>').join(''):'<div class="co-lbl" style="color:var(--m)">No common blockers at this stage -- focus on delivery execution.</div>')+'<div class="co-lbl">Exit Criteria</div>'+PC[coachStage].criteria.map(c=>'<div class="crit-i"><div class="chk" onclick="this.classList.toggle(\'done\');this.textContent=this.classList.contains(\'done\')?\'checkmark\':\'\'"></div><div class="crit-txt"><div class="ct">'+c.t+'</div><div class="ch">'+c.h+'</div></div></div>').join('')+'</div>';
+}
+
+function renderDiscovery(){
+  const s=discSector?SECTORS.find(x=>x.id===discSector):null;
+  return'<div class="tool-panel"><h1 class="pt">Discovery Question Bank</h1><p class="pm">Select a sector to get the full question bank for your Stage 2 call.</p><div class="tool-lbl">Select Sector</div><select class="tsel" id="disc-sector" onchange="discSector=this.value;render()"><option value="">-- Choose a sector --</option>'+SECTORS.map(s=>'<option value="'+s.id+'"'+(discSector===s.id?' selected':'')+'>'+s.name+'</option>').join('')+'</select>'+(s?'<div class="info-box">Run these questions in order in your Stage 2 discovery call. Do not skip the compliance questions even if the prospect seems primarily commercially oriented.</div>'+s.discoveryQs.map(q=>'<div class="dq-card"><div class="dq-topic">'+q.topic+'</div><div class="dq-q">'+q.q+'</div><div class="dq-qual"><strong>What it qualifies:</strong> '+q.qualifies+'</div></div>').join(''):'')+'</div>';
+}
+
+function renderPipeline(){
+  const stage=PC[checkStage];const key='s'+checkStage;if(!pipeChecks[key])pipeChecks[key]={};
+  const pct=PC[checkStage].prob;const allDone=stage.criteria.every((c,i)=>pipeChecks[key][i]);
+  return'<div class="tool-panel"><h1 class="pt">Pipeline Stage Checker</h1><p class="pm">Confirm all exit criteria are met before advancing a deal. Applies to all sectors.</p><div class="tool-lbl">Select Stage to Check</div><div class="pip-stages">'+[1,2,3,4,5,6].map(n=>'<div class="pip-s'+(checkStage===n?' act':'')+'" onclick="checkStage='+n+';pipeChecks={};render()"><div class="sn">Stage '+n+'</div><div class="snm">'+PC[n].name+'</div><div class="sp">'+PC[n].prob+'%</div></div>').join('')+'</div><div class="prog-row"><span style="font-size:12px;color:var(--m);min-width:140px">Win probability: <strong style="color:var(--r)">'+pct+'%</strong></span><div class="prog-bar"><div class="prog-fill" style="width:'+pct+'%"></div></div></div><div style="border-top:2px solid var(--r);padding-top:14px;margin-top:4px"><h3 class="suh">Exit Criteria -- Stage '+checkStage+': '+stage.name+'</h3><p class="body" style="color:var(--m);margin-bottom:12px">Check each criterion to confirm it is met before advancing this deal to Stage '+(checkStage<6?checkStage+1:6)+'.</p>'+stage.criteria.map((c,i)=>'<div class="crit-i"><div class="chk'+(pipeChecks[key]?.[i]?' done':'')+'" onclick="pipeChecks[\'s'+checkStage+'\']['+(i)+']=!pipeChecks[\'s'+checkStage+'\']['+(i)+'];this.classList.toggle(\'done\');this.textContent=this.classList.contains(\'done\')?\'checkmark\':\'\'">'+( pipeChecks[key]?.[i]?'checkmark':'')+'</div><div class="crit-txt"><div class="ct">'+c.t+'</div><div class="ch">'+c.h+'</div></div></div>').join('')+(checkStage<6?'<div style="margin-top:14px;padding:10px 13px;border-radius:6px;background:'+(allDone?'#EAF3DE':'#FDF2F2')+';border:1px solid '+(allDone?'#C0DD97':'#f5c5c5')+';font-size:13px;color:'+(allDone?'#27500A':'#8B1A1D')+';font-weight:600">'+(allDone?'All criteria met -- you may advance this deal to Stage '+(checkStage+1)+' ('+PC[checkStage+1].name+').':'Complete all criteria above before advancing to Stage '+(checkStage+1)+'.')+'</div>':'<div style="margin-top:14px;padding:10px 13px;border-radius:6px;background:#EAF3DE;border:1px solid #C0DD97;font-size:13px;color:#27500A;font-weight:600">Stage 6 -- Closed Won. Execute the post-signature actions immediately.</div>')+'</div></div>';
+}
+
+function renderQuickRef(){
+  const filtered=SECTORS.filter(s=>!qrFilter||s.name.toLowerCase().includes(qrFilter.toLowerCase())||s.tagline.toLowerCase().includes(qrFilter.toLowerCase())||s.vp.toLowerCase().includes(qrFilter.toLowerCase()));
+  return'<h1 class="pt">Quick Reference -- All Sectors</h1><p class="pm">All '+SECTORS.length+' sectors in one view. Filter by keyword to find what you need fast.</p><div class="qr-filter"><input type="text" placeholder="Filter by sector, use case, or keyword..." value="'+qrFilter+'" oninput="qrFilter=this.value;document.getElementById(\'qr-body\').innerHTML=renderQRRows()" id="qr-input"></div><table class="tbl"><thead><tr><th style="min-width:110px">Sector</th><th>Opening Question</th><th>Primary Personas</th><th>Value Proposition</th><th>Entry Point</th></tr></thead><tbody id="qr-body">'+renderQRRows()+'</tbody></table>';
+}
+function renderQRRows(){
+  const filtered=SECTORS.filter(s=>!qrFilter||s.name.toLowerCase().includes(qrFilter.toLowerCase())||s.tagline.toLowerCase().includes(qrFilter.toLowerCase())||s.vp.toLowerCase().includes(qrFilter.toLowerCase()));
+  return filtered.map(s=>'<tr style="cursor:pointer" onclick="navSector(\''+s.id+'\')"><td><strong>'+s.name+'</strong><br><span style="font-size:11px;color:var(--r)">'+s.tagline+'</span></td><td style="font-style:italic;font-size:12px">'+s.openingQ.substring(0,110)+'...</td><td style="font-size:12px">'+s.personas.slice(0,2).map(p=>p.title).join('<br>')+'</td><td style="font-size:12px">'+s.vp+'</td><td style="font-size:11px;color:var(--r)">'+s.entry+'</td></tr>').join('');
+}
+
+function bindEvents(){
+  document.querySelectorAll('[data-nav]').forEach(el=>{
+    el.onclick=()=>{const id=el.dataset.nav;if(SECTORS.some(s=>s.id===id))navSector(id);else nav(id);};
+  });
+}
+
+// Init -- will re-render once SECTORS is populated by data.js
+buildSidebar();
+render();
+</script>
+</body>
+</html>
