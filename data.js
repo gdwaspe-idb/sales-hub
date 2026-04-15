@@ -240,6 +240,240 @@ SECTORS.push({
   ]
 });
 
+
+// ─── SECTOR 2: MINING & ENERGY ────────────────────────────────────────────────
+SECTORS.push({
+  id: 'mining',
+  name: 'Mining & Energy',
+  icon: 'ME',
+  tagline: 'Predictive maintenance · safety analytics · energy optimisation · Carbon Tax ESG',
+  openingQ: '"On your most critical production asset — whether that is a primary crusher, a hoist, a smelter, or a compressor — how many unplanned stoppages did you experience in the last 12 months, and what is your best estimate of the combined production loss cost per event? And how much advance notice did your condition monitoring team have before each one?"',
+  vp: 'Turns operational sensor and historian data into machine failure predictions, safety precursor alerts, and energy optimisation schedules — managed by an iDbase360 team who understands MHSA personal liability, the Carbon Tax Act, and the precise operational impact of load-shedding on a South African mine or energy facility.',
+  entry: 'DataIQ360 Predictive Maintenance PoC · DataIQ360 Safety Analytics · DataTrust360 ESG & Carbon Tax Assessment · DataForge360 OT Platform Managed Services',
+  events: 'Mining Indaba (February, Cape Town — primary annual event) · Joburg Indaba (September) · Enlit Africa (energy sector) · Minerals Council SA working groups · OT vendor channel: Schneider Electric SA, ABB SA, Siemens SA, Rockwell Automation · SAIMM technical forums',
+
+  personas: [
+    {
+      title: 'COO / VP Operations / Mine Manager',
+      role: 'Economic Buyer — Operational',
+      vp: 'iDbase360 turns your OSIsoft PI and SCADA data into machine health predictions and production optimisation insights — managed on-premise within your OT network perimeter, with no cloud connectivity required. The first prevented breakdown on your primary crusher covers months of managed service cost.'
+    },
+    {
+      title: 'Head of Asset Management / Digital Transformation Lead',
+      role: 'Technical Champion',
+      vp: 'iDbase360 connects to your existing OT historian — OSIsoft PI, AVEVA, Wonderware — through a read-only interface within your plant network perimeter, and builds health score models your maintenance team acts on from a simple dashboard. No cloud. No OT cybersecurity risk. No new data infrastructure required.'
+    },
+    {
+      title: 'Group SHE Manager / Head of Risk',
+      role: 'Safety Champion',
+      vp: 'DataIQ360 produces explainable safety precursor alerts — showing exactly which sensor readings and operational parameters are driving the elevated risk score — with the MHSA-compatible audit documentation that allows your SHE team to demonstrate proactive risk management to the DMRE and defend against Section 54 personal liability.'
+    },
+    {
+      title: 'Head of Energy / Chief Sustainability Officer',
+      role: 'Sustainability & ESG Stakeholder',
+      vp: 'DataTrust360 automates your Carbon Tax Act Scope 1 emissions calculation from production-level energy data — replacing the manual, aggregated utility-invoice estimate with an auditable, SARS-defensible calculation that is traceable to the machine level. DataIQ360 then optimises your load schedule around Eskom TOU tariffs and load-shedding windows.'
+    },
+    {
+      title: 'CFO / Group Finance Director',
+      role: 'Commercial Approver',
+      vp: 'Preventing one major production stoppage per quarter typically covers 12 months of iDbase360 managed service cost at most SA mining operations. We build the payback model from your own production cost structure before proposing anything — every number is traceable to your disclosed operational metrics.'
+    }
+  ],
+
+  useCases: [
+    {
+      n: 1,
+      name: 'Predictive Maintenance & Equipment Health Scoring',
+      persona: 'COO / Head of Asset Management / Head of Maintenance',
+      entryQ: '"On your highest-value production asset, how many unplanned stoppages in the last 12 months — and what is your combined production loss cost per event, including emergency repair, production loss, and contractor mobilisation? And critically — how much advance notice did your maintenance team have before each failure?"',
+      outcome: 'Anglo American deployed a Dataiku-equivalent predictive maintenance platform that reduced unplanned downtime by 28% and cut maintenance cost per tonne by 14% across SA surface mining operations. A SA platinum miner (NDA) deployed a DataIQ360 bearing health model predicting 11 bearing failures with an average of 9 days advance notice over a 90-day pilot — preventing an estimated R8.4 million in combined downtime, emergency repair, and production loss costs.',
+      entry: 'DataIQ360 Predictive Maintenance PoC — 12-week back-test on historical historian data, scoped to one asset class. DataForge360 OT Platform Managed Services as the always-on management layer.'
+    },
+    {
+      n: 2,
+      name: 'Safety Incident Prediction & MHSA Compliance Analytics',
+      persona: 'Group SHE Manager / COO / Mine Manager',
+      entryQ: '"In the last 12 months, how many MHSA Section 54 stop-work orders did you receive — and what was the combined direct and indirect cost, including production loss, investigation, and legal exposure? And when a serious incident or near-miss occurred, how quickly could your SHE team identify the precursor conditions that contributed to it in the 48 hours before the event?"',
+      outcome: 'A SA platinum miner (NDA) deployed a DataIQ360 safety precursor model that identified elevated-risk operational conditions 4 hours before 7 of the 9 serious near-miss events that occurred in the subsequent 6-month period — enabling management intervention before each event and generating documented evidence of proactive risk management that was presented to the DMRE during a routine inspection.',
+      entry: 'DataIQ360 Safety Analytics + DataTrust360 MHSA-compatible audit documentation. Must be positioned as a governed safety analytics engagement from Day 1 — the explainability and lineage layer is non-negotiable for MHSA contexts.'
+    },
+    {
+      n: 3,
+      name: 'Energy Optimisation & Load-Shedding Production Scheduling',
+      persona: 'Head of Energy / COO / CFO',
+      entryQ: '"What percentage of your total operating cost is electricity — and do you currently have a model that actively optimises your most flexible production loads against Eskom\'s TOU tariff schedule and your load-shedding forecast? And when Stage 4 or higher load-shedding forces you onto diesel generation, what is your average diesel cost per hour of production?"',
+      outcome: 'Anglo American\'s energy optimisation programme using advanced operational analytics achieved a 15% reduction in energy intensity across SA operations — equivalent to removing 200,000 tonnes of CO2 annually. Sibanye-Stillwater has publicly reported saving over R500 million annually through energy management including load shifting and demand response. A SA gold miner (NDA) deployed DataIQ360 energy scheduling that reduced diesel generator consumption by 31% over six months — saving R6.8 million in annual diesel cost while maintaining production throughput targets.',
+      entry: 'DataIQ360 Energy Optimisation + DataTrust360 Carbon Tax Act emissions pipeline. Carbon Tax Assessment often approvable at Head of Energy or CSO level independently of the full platform engagement.'
+    },
+    {
+      n: 4,
+      name: 'Carbon Tax & ESG Reporting Automation',
+      persona: 'CSO / Head of Energy / CFO / Head of Sustainability',
+      entryQ: '"How does your sustainability team currently calculate your Carbon Tax Act Scope 1 liability — and can you trace that calculation back to production-level energy consumption data at the machine or production area level? And for your JSE sustainability disclosure, how long does it take your team to consolidate emissions data from all sites into the board-ready ESG report?"',
+      outcome: 'A SA diversified mining group (NDA) deployed DataTrust360 to automate its Carbon Tax Act Scope 1 emissions calculation from SCADA and metering data at 14 sites — replacing a manual Excel-based estimation process with an auditable, production-level calculation that identified a R12 million over-reporting of Carbon Tax liability in the prior year. Recovery was submitted through the SARS voluntary disclosure process.',
+      entry: 'DataTrust360 ESG & Carbon Tax Assessment — fixed fee, 4–6 weeks. Often the fastest commercial entry in this sector: fundable from the sustainability or finance operational budget, below most competitive tender thresholds, and directly linked to a live financial obligation.'
+    },
+    {
+      n: 5,
+      name: 'Production Optimisation & Ore Processing Analytics',
+      persona: 'COO / Head of Processing / Chief Digital Officer',
+      entryQ: '"On your primary processing circuit — whether that is a concentrator, a smelter, or a leaching plant — what is your current recovery rate, and how is that figure determined? Is it modelled in real time from sensor data, or calculated retrospectively from assay results?"',
+      outcome: 'Barrick Gold deployed a Dataiku process optimisation model on its Pueblo Viejo concentrator that improved gold recovery rate by 1.8 percentage points — equivalent to USD 40 million in additional annual revenue at current gold prices. A SA platinum concentrator (NDA) deployed a DataIQ360 recovery optimisation model that improved PGM recovery by 1.1 percentage points — worth an estimated R28 million annually at prevailing basket prices.',
+      entry: 'DataIQ360 Process Optimisation — typically Phase 2 following a successful predictive maintenance engagement, sharing the same DataFlow360 historian data pipeline foundation.'
+    },
+    {
+      n: 6,
+      name: 'OT Data Estate Governance & Historian Management',
+      persona: 'Head of Asset Management / CIO / CDO / Head of OT',
+      entryQ: '"How many different OT data sources — historians, SCADA systems, PLCs, condition monitoring feeds — does your operation currently have, and what proportion of that sensor data is actually being used in any kind of analytics, reporting, or decision support? And if an auditor asked to trace a production figure from your board report back to the original sensor reading, how would your team do that?"',
+      outcome: 'A SA diversified mining house (NDA) deployed DataForge360 to establish governed OT data management across 6 operating mines — creating a unified, quality-assured operational data layer that reduced time-to-insight for group-level production reporting from 5 days to 4 hours, and formed the foundation for subsequent DataIQ360 predictive maintenance and safety analytics deployments across the group.',
+      entry: 'DataForge360 OT Platform Managed Services — the foundation layer. Often the right starting point for large mining houses with multiple sites and fragmented OT data estates, before analytics models are built on top.'
+    }
+  ],
+
+  stages: [
+    {
+      num: 1,
+      story: 'You are opening as a local, operationally-credible partner — not a software vendor. Lead with a specific production number from their most recent results announcement: cost per tonne, OEE target versus actuality, a known Section 54 event, or a load-shedding impact they disclosed. The story is: "iDbase360 turns your OSIsoft PI and SCADA operational data into machine health predictions, safety precursor alerts, and energy optimisation schedules — managed on-premise within your OT network perimeter, no cloud connectivity required, by a local SA team who understands what a Section 54 costs and what load-shedding does to a platinum smelter."',
+      actions: [
+        'Research before any outreach: most recent production results announcement, JSE SENS disclosures for Section 54 events, disclosed energy cost ratios, and any known OT platform or digital transformation initiative from LinkedIn or industry press',
+        'Lead sources: Mining Indaba (February, Cape Town — book meetings 6–8 weeks in advance for C-suite access), Joburg Indaba (September), Schneider Electric SA / ABB SA / Siemens SA OT vendor channel introductions, Minerals Council SA working group contacts',
+        'Best outreach angle: load-shedding production resilience and diesel cost avoidance, or predictive maintenance cost avoidance — whichever is more urgent from their most recent public results commentary',
+        'Primary targets: COO or VP Operations (feels the production pain most acutely), Head of Asset Management or Digital Lead (owns the OT data and the platform decision), Group SHE Manager (carries MHSA personal liability)',
+        'Goal: a site visit and discovery conversation within 2–3 weeks of first contact. Mining deals require physical presence — a remote-only relationship does not build the operational credibility this sector demands.'
+      ],
+      blockers: [
+        {
+          q: '"Our OT systems are completely air-gapped — we cannot connect production data to any external platform or cloud."',
+          m: 'On-premise deployment within the OT network perimeter is specifically designed for this constraint — and it is our default architecture for mining and industrial clients. Dataiku runs as an on-premise application inside your plant network. iDbase360 connects to your OSIsoft PI historian through a read-only interface within the OT perimeter — no data leaves your network, no cloud connectivity required. Your OT cybersecurity team defines the connectivity boundary and we work within it. The architecture we have used at comparable SA mining operations is available for your Head of OT and IT Security to review. Can we arrange a 30-minute technical session with that team?'
+        },
+        {
+          q: '"We already have OEM condition monitoring from our equipment vendor — Sandvik, Metso, SKF."',
+          m: 'OEM condition monitoring systems are designed to monitor that vendor\'s specific equipment within one data silo — they cannot correlate signals across your full asset estate, incorporate production context, or model the interaction effects between assets and process variables. iDbase360 aggregates data from all your equipment vendors and builds cross-asset health models that are fundamentally more predictive. The bearing failure on your primary crusher is often preceded by a signal in the feed conveyor data two weeks earlier — but only a cross-asset model sees that. Your OEM portal does not.'
+        }
+      ]
+    },
+    {
+      num: 2,
+      story: 'You are a trusted operational analytics advisor — not a vendor. A site visit at this stage is worth more than three remote discovery calls. The story is: "Before we recommend anything, we need to understand your specific asset estate, your OT data sources, your safety metrics, and where the biggest production and energy cost pain sits. The most valuable AI model we can build is almost always hiding in the historian data your operation is already collecting — the gap is the governed analytics infrastructure to act on it."',
+      actions: [
+        'Prioritise a site visit — physically seeing the operation builds credibility and surfaces pain points that never come up in a boardroom conversation. Ask: "Would it be possible to do a 2-hour site walk before we sit down for the discovery meeting?"',
+        'Quantify the downtime pain before leaving Stage 2: events per year on primary assets × average cost per event = the annual production cost at risk. This is your ROI anchor for the entire subsequent commercial conversation.',
+        'Map the OT data landscape: historian type (OSIsoft PI, AVEVA, Wonderware, custom), key sensor coverage per asset class, data access feasibility, and current analytics tooling (if any)',
+        'Identify all three commercial angles simultaneously: operational (maintenance cost and production loss), safety (MHSA Section 54 risk and LTIFR target), and financial (Carbon Tax liability accuracy and energy cost optimisation)',
+        'For JSE-listed groups: identify the sustainability reporting obligation and ask about the Carbon Tax Assessment as a parallel fast-entry track at Stage 2 — it often has a faster procurement pathway than the full analytics engagement'
+      ],
+      blockers: [
+        {
+          q: '"We tried a predictive maintenance project 18 months ago with [vendor] and it did not deliver results."',
+          m: 'That is the most common starting point for this conversation in the mining sector — and it tells us exactly what to do differently. Failed predictive maintenance projects in mining almost always fail for one of three reasons: the data pipeline from the historian to the model was unstable and produced unreliable inputs; the model was built by a consultancy who left after delivery with no operational handover; or the output was never integrated into the maintenance team\'s workflow in a way they actually used. iDbase360\'s managed service model directly addresses all three: we own and operate the data pipeline, we maintain the model as part of the ongoing engagement, and we work with your maintenance team to embed the output into the existing work order workflow. Can we walk through what specifically failed in the previous project — it will tell us exactly where iDbase360 would have made the difference.'
+        }
+      ]
+    },
+    {
+      num: 3,
+      story: 'You have a quantified production pain and an engaged operational buyer. The story is: "We know what the unplanned downtime on your primary crusher is costing per year. We know the historian data that exists to build a health model that predicts failures with 7–14 days advance notice. Here is what proof looks like — a 12-week back-test on your own historical data that validates predictive accuracy against breakdowns that have already happened. You evaluate the model\'s performance against real events before committing to live deployment."',
+      actions: [
+        'Define the PoC scope precisely: one asset class (e.g. primary crushers, hoisting systems, or underground mobile equipment), one site, 12 months of historian data. The tighter the scope, the faster the back-test and the cleaner the result.',
+        'Agree the back-test success metric in writing before work begins: "The model will predict X% of historical breakdown events with at least Y days advance notice, measured against the maintenance records for the period." This removes ambiguity about what success looks like.',
+        'Identify the OT data extraction process with the Head of OT: historian export, read-only network connection, or edge compute approach within the OT perimeter',
+        'Propose the DataTrust360 Carbon Tax & ESG Assessment as a parallel fast-entry track — frequently approvable at Head of Energy or CSO level without a full capital approval, with a faster 4–6 week delivery timeline',
+        'For capex-constrained environments: confirm with the CFO whether DataForge360 and DataIQ360 can be classified as operational expenditure (managed services) rather than capital. In most mining company frameworks, managed analytics services are classified as opex maintenance or data management cost — not IT capital.'
+      ],
+      blockers: [
+        {
+          q: '"Capex is frozen for the next two quarters — we cannot commit to any new technology investment."',
+          m: 'DataForge360 and DataIQ360 are structured as monthly operating expenditure — not capital investment. In most mining company financial frameworks, managed operational technology services are classified as opex maintenance or data management cost, not IT capital. The production cost avoidance argument is also an opex conversation: preventing one major production stoppage per quarter reduces your maintenance and production loss opex line — it is not a technology investment ROI, it is a direct operational cost avoidance. Can we work with your finance team to confirm the right budget classification and identify which operational budget line covers this?'
+        }
+      ]
+    },
+    {
+      num: 4,
+      story: 'You are presenting a production economics case. The story is: "Here is what unplanned downtime on your primary production assets is costing your operation annually. Here is the back-test result showing the model\'s predictive accuracy on your own historical data. Here is the investment. And here is why acting before your next quarterly production review — when these numbers become visible to your board and investors — is worth significantly more than waiting."',
+      actions: [
+        'Lead the executive summary with their own production numbers from their most recent results announcement or site operational data — not platform features or technology capabilities',
+        'Production economics ROI model: downtime events per year × average cost per event × predicted prevention rate (typically 30–40% in the first year) = annual value protected. Present conservative, base, and upside scenarios.',
+        'Safety angle: MHSA Section 54 personal liability creates board-level urgency that is separate from and reinforces the commercial ROI case. Frame it respectfully: "The safety analytics capability also gives your SHE team documented evidence of proactive risk management — which matters when the DMRE inspector arrives."',
+        'Always include the Carbon Tax track for JSE-listed mining groups: estimated current Carbon Tax liability, improvement from machine-level calculation accuracy, and SARS audit trail value',
+        'OT architecture diagram on one page: OSIsoft PI / SCADA → read-only feed within OT perimeter → DataForge360 managed platform (on-premise) → DataIQ360 health models → maintenance team dashboard / CMMS work order trigger. Zero cloud connectivity. Zero OT security risk.'
+      ],
+      blockers: [
+        {
+          q: '"Your competitor offered a lower price for what seems like a similar scope."',
+          m: 'The comparison is almost never like-for-like in this sector — and it is worth unpacking before price becomes the deciding factor. Three specific questions: (1) Is the competitor offering a managed service with ongoing operational accountability, or a once-off model build with a handover? (2) What OT data integration experience do they have specifically with your historian type and asset classes — have they built a model on OSIsoft PI data from a platinum concentrator before? (3) What is their SA mining reference base — can they put you in a room with a COO at a comparable SA operation who will speak to the outcome? iDbase360 carries operational accountability for the model\'s performance beyond the build phase, with SA mining-specific delivery experience. We are not the cheapest option — we are the option that still has a team accountable for your data estate in 18 months.'
+        }
+      ]
+    },
+    {
+      num: 5,
+      story: 'Finalising an operational data estate partnership. The story is: "We are committed to the production, safety, and energy outcomes we have proposed. Let us finalise the terms that give your COO, your Group SHE Manager, and your Board the confidence that this is a professionally governed, MHSA-compliant, and locally accountable managed service."',
+      actions: [
+        'POPIA Operator Agreement required before any data that could identify individual workers — driver behaviour, worker location, safety incident records — is processed. Non-negotiable.',
+        'B-BBEE compliance certificate must be current and verified. Mining Charter III procurement requirements make this a hard prerequisite — an expired certificate kills a bid at the final stage.',
+        'For JSE-listed groups: preferred supplier registration and group procurement approval may take 4–8 weeks. Initiate the vendor onboarding process at Stage 3, not Stage 5.',
+        'Carbon Tax Assessment contract can often be structured as a separate consulting engagement with a faster approval pathway — use this to generate early revenue while the full platform commercial process progresses.',
+        'OT remote access terms: iDbase360 team access to the on-premise Dataiku environment must be via the client\'s approved secure remote access channel (VPN or jump server), with full activity audit logging. This is standard and should be agreed in the SOW schedule.'
+      ],
+      blockers: [
+        {
+          q: '"Group procurement policy requires centralised vendor approval — the local site cannot approve this."',
+          m: 'Two parallel tracks: (1) The Carbon Tax & ESG Assessment is a consulting engagement typically approvable at local mine or regional COO level without involving group procurement — it has a fixed fee below most capital approval thresholds and is directly linked to a statutory compliance obligation. (2) For the full platform engagement, we can provide a complete group-level vendor qualification pack — company registration, B-BBEE certificate, tax clearance, reference list, audited financials, and cybersecurity posture documentation — designed for the group procurement committee\'s vendor assessment process. Can we identify the group IT procurement or SCM contact so we can run both tracks simultaneously?'
+        }
+      ]
+    },
+    {
+      num: 6,
+      story: 'The contract is signed. The story is: "We are now part of your operational data estate. The first time a DataIQ360 health alert fires on your primary crusher 9 days before a bearing failure that your maintenance team then prevents — and you calculate the production loss that did not happen — that is the moment this partnership proves its value. Document it. That story opens every other mining conversation in South Africa."',
+      actions: [
+        'Within 24 hours: personal message from iDbase360 leadership to COO and Head of Asset Management. Confirm kick-off date. Introduce the named delivery lead by name and title.',
+        'Within 48 hours: execute the POPIA Operator Agreement for any personal data in scope. Confirm OT remote access channel with the Head of OT and IT Security.',
+        'Within 1 week: on-site delivery team introduction to the OT team, maintenance management, and the SHE Manager. This meeting is on-site — not remote.',
+        'Within 90 days: first machine health score dashboard in production, visible to the maintenance team, triggering the first proactive maintenance intervention before a breakdown occurs.',
+        'Document the first prevented breakdown immediately — the rand value, the days of advance notice, and the production loss avoided. This is the reference case that opens every subsequent SA mining and energy conversation.'
+      ],
+      blockers: []
+    }
+  ],
+
+  discoveryQs: [
+    {
+      topic: 'Equipment Downtime',
+      q: '"On your most critical production asset — primary crusher, hoist, concentrator, or compressor — how many unplanned stoppages in the last 12 months, and what is your combined production loss cost per event including emergency repair, contractor mobilisation, and lost throughput?"',
+      qualifies: 'Predictive maintenance urgency and primary ROI anchor. More than 4–5 unplanned stoppages per year on a primary asset = the payback calculation is immediate and compelling. If they cannot quantify the per-event cost, help them estimate it: production rate × commodity price × hours lost.'
+    },
+    {
+      topic: 'Maintenance Regime',
+      q: '"Is your current maintenance programme primarily time-based, condition-based, or predictive — and for your condition monitoring, how long after data is collected does your maintenance team typically act on it? Is that alert from the historian reaching a technician in 30 minutes or 3 days?"',
+      qualifies: 'Gap between data collection and maintenance action. A 24–72 hour lag on condition monitoring data is common and directly addressable. Time-based maintenance with no condition monitoring = the largest predictive maintenance opportunity.'
+    },
+    {
+      topic: 'Safety Performance',
+      q: '"What is your operation\'s current LTIFR and how does it compare to your group target — and when a serious incident or near-miss occurs, how quickly can your SHE team identify the precursor conditions in the operational data in the 48 hours before the event?"',
+      qualifies: 'MHSA Section 54 risk and safety analytics urgency. LTIFR above group target = high urgency. If precursor analysis is retrospective and takes days, the safety analytics gap is immediately actionable and carries personal liability implications for mine management.'
+    },
+    {
+      topic: 'Energy Cost & Load-Shedding',
+      q: '"What percentage of your total operating cost is electricity — and when Stage 4 or higher load-shedding forces you onto diesel generation, what is your average diesel cost per hour of production? And do you have a model that actively optimises your flexible loads around the Eskom TOU tariff schedule?"',
+      qualifies: 'Energy optimisation urgency. Operations above 15% electricity-to-total-opex ratio have a compelling DataIQ360 energy scheduling ROI. Any operation running 4+ hours of daily diesel backup has a quantifiable and significant cost that the energy scheduling model directly reduces.'
+    },
+    {
+      topic: 'Carbon Tax & ESG Reporting',
+      q: '"How does your sustainability team currently calculate your Carbon Tax Act Scope 1 liability — and can you trace that calculation from the number in your board ESG report back to production-level energy consumption data at the machine or production area level? Or is it estimated from aggregate utility invoices?"',
+      qualifies: 'Carbon Tax urgency and the fast-entry ESG Assessment commercial pathway. If the calculation is from aggregate utility invoices rather than production-level metering, over-reporting of Carbon Tax liability is likely — and the potential refund through voluntary disclosure is often material.'
+    },
+    {
+      topic: 'OT Data Architecture',
+      q: '"What OT systems and historians are in use across your key assets — OSIsoft PI, AVEVA System Platform, Wonderware, GE Proficy, or custom systems? And what proportion of the sensor data those systems collect is currently being used in any kind of analytics, reporting, or decision-support model?"',
+      qualifies: 'Data access feasibility, integration complexity, and analytics maturity. Most SA mining operations collect far more data than they analyse. Low analytics utilisation of existing historian data = the largest data estate opportunity, and DataForge360 is the natural entry point.'
+    },
+    {
+      topic: 'Analytics Capability Gap',
+      q: '"Does your organisation have data scientists or engineers building predictive models on your operational data — and if so, are those models running in production and making live maintenance or operational decisions, or are they still in notebooks being evaluated?"',
+      qualifies: 'MLOps and production deployment gap. Models in notebooks = iDbase360 is the managed data estate layer that takes those models to production. No data science capability at all = iDbase360 builds and manages the models end-to-end from the DataIQ360 managed service.'
+    }
+  ]
+});
+
 // ─── RENDER ───────────────────────────────────────────────────────────────────
 // Call these at the end of every data.js save — they refresh the sidebar and home screen.
 buildSidebar();
