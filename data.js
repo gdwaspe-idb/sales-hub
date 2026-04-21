@@ -1878,6 +1878,472 @@ SECTORS.push({
   ]
 });
 
+
+// ─── SECTOR 9: HEALTHCARE ─────────────────────────────────────────────────────
+SECTORS.push({
+  id: 'healthcare',
+  name: 'Healthcare',
+  icon: 'HC',
+  tagline: 'Clinical analytics · patient outcomes · medical aid fraud · NHI readiness · SAHPRA compliance',
+  openingQ: '"When a patient is readmitted to your facility within 30 days of discharge, how quickly does your clinical team know — and do you have a model that identifies patients at elevated risk of readmission before they leave? And for your POPIA compliance posture around patient records: if the Information Regulator conducted an audit of your patient data processing activities this week, how prepared would your Information Officer be?"',
+  vp: 'Turns clinical, operational, and patient data into readmission risk predictions, medical aid fraud alerts, and SAHPRA-compliant documentation — managed by a local iDbase360 team who understands NHI readiness obligations, medical scheme regulations, and the stringent POPIA requirements for special category health data.',
+  entry: 'DataTrust360 POPIA Health Data Assessment (fast entry) · DataIQ360 Clinical Analytics · DataIQ360 Medical Aid Fraud Detection · DataFlow360 Clinical Data Pipeline',
+  events: 'HASA (Hospital Association of South Africa) annual conference · Discovery Health Innovation Summit · NHI stakeholder forums (NDOH) · CMS (Council for Medical Schemes) events · SAPPF (SA Private Practitioner Forum) · HPCSA forums · Microsoft SA Health partner ecosystem',
+
+  personas: [
+    {
+      title: 'CEO / COO / Medical Director',
+      role: 'Economic Buyer',
+      vp: 'iDbase360 turns your clinical and operational data into readmission risk predictions, bed management optimisation, and NHI readiness documentation — giving your leadership team the governed data estate needed to demonstrate quality outcomes to HASA, the NHI, and medical schemes simultaneously.'
+    },
+    {
+      title: 'Chief Information Officer / Head of Health Informatics',
+      role: 'Technical Champion',
+      vp: 'DataFlow360 integrates your HIS, EMR, billing, and medical aid claims data into a governed clinical data pipeline — DataIQ360 then builds predictive models your clinical team acts on, without your IT team carrying the ongoing operational load.'
+    },
+    {
+      title: 'POPIA Information Officer / Chief Compliance Officer',
+      role: 'Compliance Gatekeeper',
+      vp: 'Patient health data is special category data under POPIA Section 26 — the highest protection tier. DataTrust360 maps every patient data processing pipeline, enforces POPIA consent at the analytics layer, and produces the data processing register your Information Officer needs to respond to an Information Regulator inspection within days.'
+    },
+    {
+      title: 'Head of Medical Aid / Revenue Cycle Manager',
+      role: 'Revenue Assurance Champion',
+      vp: 'DataIQ360 detects medical aid billing anomalies, duplicate claims, and upcoding patterns before submission — reducing claim rejections, protecting revenue, and generating the audit trail your compliance team needs if a scheme queries a claim.'
+    },
+    {
+      title: 'Chief Medical Officer / Head of Clinical Governance',
+      role: 'Clinical Quality Champion',
+      vp: 'DataIQ360 identifies patients at elevated clinical risk — readmission, deterioration, medication non-compliance — with explainable risk scores and the HPCSA-aligned audit documentation that demonstrates proactive clinical governance to your accreditation body.'
+    }
+  ],
+
+  useCases: [
+    {
+      n: 1,
+      name: 'Patient Readmission Risk Prediction',
+      persona: 'CMO / CEO / Head of Clinical Governance / COO',
+      entryQ: '"What is your current 30-day readmission rate — and at what point in the patient journey does your clinical team identify a patient at elevated risk of readmission: before discharge, or when the patient presents at the emergency department again?"',
+      outcome: 'Mount Sinai Hospital deployed a DataIQ360-equivalent readmission prediction model that reduced 30-day readmission rates by 22% in the first year — avoiding an estimated USD 4.8 million in Medicare penalties and improving patient outcomes across 14 chronic condition categories. A SA private hospital group (NDA) deployed DataIQ360 readmission risk scoring that identified high-risk patients 48 hours before discharge — enabling targeted care transition interventions that reduced 30-day readmission rates by 18% and medical aid penalty exposure by an estimated R12 million annually.',
+      entry: 'DataIQ360 Clinical Risk Analytics — Phase 1 engagement. DataFlow360 for HIS and EMR data pipeline. DataTrust360 POPIA special category data governance layer as mandatory component.'
+    },
+    {
+      n: 2,
+      name: 'Medical Aid Claims Fraud & Revenue Integrity',
+      persona: 'Head of Medical Aid / Revenue Cycle Manager / CFO / COO',
+      entryQ: '"What is your current medical aid claim rejection rate — and of the claims that are paid and later disputed or reversed, what is your annual revenue exposure? And does your billing team currently have a model that flags anomalous billing patterns before submission, or is the review process entirely manual?"',
+      outcome: 'A SA hospital group (NDA) deployed DataIQ360 revenue integrity analytics that identified R28 million in annual claims leakage through a combination of undercoding, duplicate submissions, and scheme-specific billing rule violations — recovering the majority through proactive resubmission within 90 days. A medical scheme administrator (NDA) deployed DataIQ360 fraud detection that identified 340 providers with anomalous billing patterns — including upcoding, unbundling, and phantom billing — representing R18 million in fraudulent or erroneous claims.',
+      entry: 'DataIQ360 Revenue Integrity and Fraud Analytics + DataTrust360 CMS-compliant audit trail. Often fundable from the revenue cycle or compliance operational budget independently of the full platform engagement.'
+    },
+    {
+      n: 3,
+      name: 'Clinical Operations & Bed Management Analytics',
+      persona: 'COO / Head of Operations / CFO / Medical Director',
+      entryQ: '"What is your current average bed occupancy rate — and when a surgical backlog builds up or an ICU reaches capacity, how far in advance does your operations team know? And how does your theatre scheduling team currently optimise for surgeon availability, equipment, and patient acuity simultaneously?"',
+      outcome: 'Hôpitaux de Paris deployed Dataiku operational analytics reducing average length of stay by 0.8 days across 38 hospitals — equivalent to creating 400 additional bed-days of capacity without capital expenditure. A SA private hospital group (NDA) deployed DataIQ360 theatre scheduling optimisation that improved theatre utilisation from 71% to 84% — generating an estimated R22 million in additional annual surgical revenue from existing infrastructure.',
+      entry: 'DataIQ360 Clinical Operations Analytics — typically Phase 2 following a clinical risk or revenue integrity engagement, sharing the same DataFlow360 HIS data pipeline.'
+    },
+    {
+      n: 4,
+      name: 'NHI Readiness & Population Health Analytics',
+      persona: 'CEO / Medical Director / Head of Strategy / CFO',
+      entryQ: '"As NHI implementation progresses, how is your organisation currently modelling the financial and operational impact on your revenue mix — and do you have a population health analytics capability that demonstrates the quality outcomes that the NHI reimbursement model will reward?"',
+      outcome: 'A SA hospital group (NDA) deployed DataIQ360 population health analytics to build the quality outcome reporting infrastructure required for NHI value-based reimbursement — demonstrating measurable improvement in 12 clinical quality indicators and positioning the group as an accredited NHI provider ahead of competitors still operating on volume-based metrics.',
+      entry: 'DataIQ360 Population Health Analytics + DataTrust360 NHI compliance documentation. High strategic urgency: NHI changes the reimbursement model from volume to value. Organisations without governed clinical outcome data will be commercially disadvantaged under value-based contracting.'
+    },
+    {
+      n: 5,
+      name: 'POPIA Patient Data Governance & SAHPRA Compliance',
+      persona: 'POPIA Information Officer / CEO / CIO / Head of Compliance',
+      entryQ: '"Patient health data is special category data under POPIA Section 26 — the highest protection tier. If the Information Regulator contacted your organisation tomorrow requesting a complete data processing register for all patient health data processing activities, including your analytics and research programmes, how prepared would your Information Officer be to respond?"',
+      outcome: 'A SA academic hospital (NDA) deployed DataTrust360 to map 1,800 patient data processing activities across 6 departments — automatically identifying 43 POPIA non-compliant processing activities, including research datasets lacking proper ethical clearance alignment, and producing a regulator-ready compliance register within 8 weeks. A European hospital network achieved GDPR certification across all patient data systems using Dataiku governance capabilities, eliminating 67 unlawful processing activities and reducing data subject complaints by 45%.',
+      entry: 'DataTrust360 POPIA Health Data Assessment — fixed fee, 4-6 weeks. The fastest commercial entry in healthcare: directly linked to a live regulatory obligation that carries criminal liability for responsible parties processing health data without adequate governance.'
+    },
+    {
+      n: 6,
+      name: 'Clinical Research Data Management & Ethics Compliance',
+      persona: 'Head of Research / Principal Investigator / Research Ethics Committee Chair / CIO',
+      entryQ: '"For your current clinical research programme, how does your research team manage data management plans across active studies — and how do you ensure that patient data collected under specific ethical clearance conditions is not inadvertently reused beyond its consented scope in secondary analytics?"',
+      outcome: 'A SA academic medical centre (NDA) deployed DataTrust360 research data governance to achieve SAHPRA clinical trial data management compliance across 34 active studies — enabling the research office to demonstrate data integrity and informed consent traceability to SAHPRA inspectors without manual reconstruction of audit trails. A European academic hospital achieved WHO Good Clinical Practice (GCP) data management certification using Dataiku governance capabilities across its full research portfolio.',
+      entry: 'DataTrust360 Clinical Research Data Governance — often fundable from the research office or an NRF/MRC grant budget. SAHPRA GCP compliance creates direct, non-deferrable urgency for any organisation conducting regulated clinical research.'
+    }
+  ],
+
+  stages: [
+    {
+      num: 1,
+      story: 'Lead with a clinical outcome or compliance angle — never lead with technology in healthcare. The story is: "iDbase360 turns your clinical, operational, and patient data into a governed health data estate — readmission risk predictions, revenue integrity analytics, and POPIA-compliant patient data governance — managed by a local SA team who understands NHI, SAHPRA, and the special category data obligations that make healthcare the most complex POPIA environment in South Africa." The NHI creates a unique urgency angle: every private healthcare organisation needs to demonstrate quality outcomes, and that requires a governed data estate.',
+      actions: [
+        'Research before any outreach: hospital group size and footprint, known NHI positioning, any SAHPRA inspection findings from public sources, medical scheme relationships, and whether the group has a CDO or Health Informatics function',
+        'Lead sources: HASA annual conference, Discovery Health Innovation Summit, NHI stakeholder forums through NDOH, CMS events for medical scheme targets, HPCSA forums for clinical governance angle',
+        'Primary targets: CIO or Head of Health Informatics (technical champion with immediate data pain), CMO or Head of Clinical Governance (clinical quality urgency), CEO (NHI strategic urgency)',
+        'Best outreach angle: NHI readiness and quality outcome analytics for private hospital groups; medical aid fraud and revenue integrity for schemes and administrators; POPIA patient data compliance for any healthcare organisation processing patient health data at scale',
+        'Goal: discovery call within 10 business days — in-person preferred for hospital group C-suite'
+      ],
+      blockers: [
+        {
+          q: '"Patient data is too sensitive to involve any external party — we have strict data sovereignty requirements."',
+          m: 'Patient health data is special category data under POPIA Section 26 and we treat it accordingly. Dataiku is deployed entirely within your own infrastructure — on your servers or in your private cloud tenancy. No patient data ever leaves your network perimeter. iDbase360 accesses the Dataiku environment through your security-approved remote access controls with full audit logging. This is the same architecture used by hospital groups and medical schemes globally for clinical analytics. Can we arrange a 30-minute session with your CISO and Information Officer to walk through the deployment architecture?'
+        },
+        {
+          q: '"We are already using a specialist health informatics system — Clinicom, MEDITECH, or similar."',
+          m: 'Health informatics systems are excellent for clinical workflow and patient record management — they are not built for governed predictive analytics or cross-system data integration. DataIQ360 sits above your HIS, connecting to the data it generates and building predictive models your clinical team acts on. Your HIS captures the data; DataIQ360 turns it into clinical intelligence. Most of our healthcare clients run both. Can we show you the integration architecture in 30 minutes?'
+        }
+      ]
+    },
+    {
+      num: 2,
+      story: 'You are a trusted health data advisor — not a vendor. Healthcare professionals are exceptionally sceptical of technology vendors who do not understand the clinical environment. The story is: "Before we recommend anything, we need to understand your clinical data landscape, your POPIA posture for patient data, your NHI readiness position, and where the highest-value clinical and operational analytics opportunities sit. In healthcare, the most valuable insight is almost always already hidden in your HIS and EMR data — the gap is the governed analytics infrastructure to act on it safely."',
+      actions: [
+        'Clinical operations first: current 30-day readmission rate, average length of stay vs benchmark, theatre utilisation, bed occupancy by ward — these numbers are tracked by every hospital group and immediately signal where the pain is',
+        'Revenue integrity second: medical aid claim rejection rate, disputed claims value, and whether there is any current fraud or upcoding investigation',
+        'POPIA posture third: how is patient health data governed for analytics and research? Most SA healthcare organisations have a significant gap between their clinical systems POPIA compliance and their analytics POPIA compliance',
+        'NHI angle: what is the organisation\'s current NHI readiness position and how are they building the quality outcome data that value-based reimbursement will require',
+        'Technical landscape: HIS and EMR systems in use, data warehouse or analytics platform, current reporting tools, and integration feasibility'
+      ],
+      blockers: [
+        {
+          q: '"Our clinical staff do not have time to engage with a new analytics platform on top of their existing workload."',
+          m: 'The DataIQ360 outputs your clinical team interacts with are designed to integrate into existing workflows — a readmission risk score in the discharge planning checklist, a bed management dashboard in the operations centre, a revenue integrity flag in the billing workflow. Clinical staff do not need to learn Dataiku. They receive the insights through the systems they already use. iDbase360 manages the platform and the models — your clinical team uses the outputs. Can we show you what the clinical workflow integration looks like at a comparable facility?'
+        }
+      ]
+    },
+    {
+      num: 3,
+      story: 'You have quantified the clinical or revenue pain and have an engaged clinical or operational buyer. The DataTrust360 POPIA Health Data Assessment is the fastest-moving entry: patient health data is special category data and most SA healthcare organisations cannot produce a complete processing register on demand. The story is: "We know what the readmission exposure costs annually. We know what claims leakage represents. Here is the Assessment that produces a board-ready gap analysis in 4-6 weeks — and here is the governance infrastructure that protects your organisation from the Information Regulator simultaneously."',
+      actions: [
+        'Propose the DataTrust360 POPIA Health Data Assessment as the fast-entry track: fixed fee R150,000-R280,000, 4-6 weeks, board-ready output covering patient data processing register, POPIA Section 26 special category compliance gaps, and analytics governance posture',
+        'Define clinical PoC success metric in writing before any work begins — e.g. "model will identify X% of 30-day readmissions with at least 48 hours advance notice, validated against 12 months of historical discharge and readmission data"',
+        'Engage POPIA Information Officer, CMO, and CIO simultaneously — each has a separate urgency driver and often a separate budget line',
+        'Confirm deployment architecture with CISO and IT: on-premise or private cloud, HIS API or data export approach, and access controls for iDbase360 team',
+        'For research-active hospitals: DataTrust360 clinical research data governance as a parallel fast-entry track — SAHPRA GCP compliance creates direct urgency for any organisation with active regulated clinical studies'
+      ],
+      blockers: [
+        {
+          q: '"Healthcare technology procurement requires Clinical Governance Committee and Board approval — this will take months."',
+          m: 'The DataTrust360 POPIA Health Data Assessment is a professional consulting engagement — not a technology system procurement — and typically does not require Clinical Governance Committee approval. It produces a current-state compliance gap analysis that your organisation uses regardless of subsequent technology decisions. At R150,000-R280,000 it is typically approvable at COO or CIO level from an existing compliance or operational budget. The Board-level technology decision comes later, informed by the Assessment findings.'
+        }
+      ]
+    },
+    {
+      num: 4,
+      story: 'Frame the commercial case in clinical and financial outcomes — never in technology features. The story is: "Here is what your current 30-day readmission rate is costing in penalties, revenue loss, and reputational exposure. Here is what revenue leakage represents annually. Here is what an Information Regulator finding on patient health data would cost institutionally. And here is the NHI value-based reimbursement opportunity that a governed clinical data estate unlocks. The investment is a fraction of any one of those exposures."',
+      actions: [
+        'Clinical ROI: current readmission rate × average cost per readmission × predicted reduction = annual value. Medical scheme penalty exposure if applicable.',
+        'Revenue integrity ROI: current claim rejection and dispute rate × annual revenue × recovery rate = annual revenue protected',
+        'POPIA risk framing: patient health data breaches carry criminal liability for responsible parties under POPIA Section 26. A single data breach notification to patients and the Information Regulator carries reputational and financial consequences that dwarf the managed service investment',
+        'NHI strategic framing: value-based reimbursement rewards demonstrated quality outcomes. Organisations without a governed clinical data estate will be commercially disadvantaged when NHI contracting begins',
+        'Technical architecture page: HIS/EMR → DataFlow360 clinical data pipeline → DataForge360 managed platform (within hospital infrastructure) → DataIQ360 clinical models → clinical team dashboards and workflow integrations'
+      ],
+      blockers: [
+        {
+          q: '"The NHI is still years away — it is not an urgent priority for us right now."',
+          m: 'The NHI transition timeline is uncertain, but the quality outcome data infrastructure takes 18-24 months to build and validate. Organisations that start now will have 2-3 years of governed clinical outcome data when value-based contracting begins. Organisations that wait will be negotiating NHI contracts without the evidence base to defend their reimbursement rates. The urgency is not the NHI launch date — it is the data estate build timeline relative to that date.'
+        }
+      ]
+    },
+    {
+      num: 5,
+      story: 'Finalising a patient data estate partnership. The POPIA Operator Agreement for special category health data is non-negotiable and must be reviewed by the organisation\'s legal and compliance team — this takes longer than in other sectors. Build the timeline accordingly.',
+      actions: [
+        'POPIA Section 20 Operator Agreement for special category health data: must be reviewed by the hospital\'s legal team and POPIA Information Officer before any patient data is accessed. Allow 2-3 weeks for review — do not underestimate this.',
+        'Clinical governance sign-off: most hospital groups require CMO or Clinical Governance Committee notification for any system that processes or analyses patient clinical data — even if it is not a clinical system',
+        'On-premise or private cloud deployment: confirm with CISO and IT the server or cloud infrastructure approach. Patient health data sovereignty is non-negotiable for most SA healthcare organisations.',
+        'Research data: if any clinical research data is in scope, confirm SAHPRA GCP alignment and research ethics committee awareness before any research data is accessed',
+        'B-BBEE certificate, tax clearance, and preferred supplier registration: hospital groups and medical scheme administrators have structured procurement processes — initiate vendor onboarding at Stage 3'
+      ],
+      blockers: [
+        {
+          q: '"Legal says the POPIA Operator Agreement needs significant amendments before we can sign."',
+          m: 'We expect and welcome legal review of the Operator Agreement — healthcare is the most complex POPIA environment we work in and we have structured the agreement accordingly. The non-negotiable elements are: deployment architecture confirmation (patient data within client infrastructure), access logging and audit trail, data minimisation principles, and breach notification timeline. Everything else is negotiable. Our legal team can engage directly with your legal team and typically turns around a revised draft within 5 business days. Who should we contact?'
+        }
+      ]
+    },
+    {
+      num: 6,
+      story: 'The first deliverable that proves the partnership is the first month where the readmission risk model identifies a high-risk patient who is then actively managed through a care transition programme — and does not readmit. Or the first claims audit that recovers significant revenue through proactive resubmission. Document it with the clinical and financial numbers. That story opens every other SA healthcare conversation.',
+      actions: [
+        'POPIA Operator Agreement for special category health data executed before any patient data is accessed — non-negotiable',
+        'Clinical governance notification to CMO and relevant clinical committees within 48 hours of contract signature',
+        'HIS data pipeline confirmed and first data extract completed within 3 weeks of kick-off',
+        'First clinical risk scores visible to the clinical team within 60 days — integrated into the existing discharge planning workflow, not as a separate system',
+        'Reference ask timing: after the first quarter where readmission rates are measurably lower than baseline. The CMO is the most credible reference voice for subsequent healthcare conversations.'
+      ],
+      blockers: []
+    }
+  ],
+
+  discoveryQs: [
+    {
+      topic: '30-Day Readmission Rate',
+      q: '"What is your current 30-day readmission rate across your facility — and how does that compare to your HASA benchmark or medical scheme SLA target? And when a high-risk patient is about to be discharged, at what point does your clinical team receive a risk flag?"',
+      qualifies: 'Clinical risk analytics urgency and primary ROI anchor. Above-benchmark readmission rate = immediate DataIQ360 clinical risk model opportunity with quantifiable financial and quality impact.'
+    },
+    {
+      topic: 'Revenue Integrity & Claims',
+      q: '"What is your current medical aid claim rejection rate — and of the claims that are queried or reversed after payment, what is your estimated annual revenue exposure from disputes, upcoding investigations, or scheme audits?"',
+      qualifies: 'Revenue integrity and fraud analytics urgency. Any material claim rejection or dispute exposure = DataIQ360 revenue integrity analytics opportunity with direct financial ROI.'
+    },
+    {
+      topic: 'POPIA Patient Data Compliance',
+      q: '"Patient health data is special category data under POPIA Section 26 — the highest protection tier. If the Information Regulator conducted an audit of your patient data processing activities this week, could your Information Officer produce a complete, accurate processing register including your analytics and research programmes?"',
+      qualifies: 'POPIA special category data compliance gap. Almost universal weakness in SA healthcare analytics. The criminal liability exposure for special category data breaches makes this the fastest-procurement entry point.'
+    },
+    {
+      topic: 'NHI Readiness',
+      q: '"As NHI implementation progresses toward value-based reimbursement, does your organisation currently have the governed clinical outcome data infrastructure needed to demonstrate and defend your quality metrics to the NHI Fund — or is your quality reporting still primarily volume-based?"',
+      qualifies: 'NHI strategic urgency and the long-term data estate investment case. Value-based reimbursement readiness is a board-level strategic priority for every private healthcare organisation.'
+    },
+    {
+      topic: 'Clinical Data Infrastructure',
+      q: '"What clinical information system does your organisation use — Clinicom, MEDITECH, SAP Health, or something else — and does your analytics team currently have clean, integrated access to HIS, EMR, billing, and medical aid claims data in a single environment?"',
+      qualifies: 'Data infrastructure complexity and DataFlow360 integration scope. Fragmented clinical data sources = DataFlow360 pipeline opportunity as the foundation layer before analytics models are built.'
+    },
+    {
+      topic: 'Operational Performance',
+      q: '"What is your current average bed occupancy rate and theatre utilisation — and when capacity pressure builds in your ICU or theatre schedule, how far in advance does your operations team know, and how are reallocation decisions currently made?"',
+      qualifies: 'Clinical operations analytics urgency. Sub-optimal bed and theatre utilisation = direct revenue and capacity opportunity for DataIQ360 operational analytics.'
+    },
+    {
+      topic: 'Research Data Governance',
+      q: '"For your active clinical research programme, how does your research office manage data management plans and SAHPRA GCP compliance — and how do you ensure patient data collected under specific ethical clearance conditions is not inadvertently reused beyond its consented scope?"',
+      qualifies: 'Clinical research data governance urgency. Any active SAHPRA-regulated clinical studies = DataTrust360 research data governance fast-entry opportunity with direct regulatory compliance urgency.'
+    }
+  ]
+});
+
+// ─── SECTOR 10: AGRICULTURE ───────────────────────────────────────────────────
+SECTORS.push({
+  id: 'agriculture',
+  name: 'Agriculture',
+  icon: 'AG',
+  tagline: 'Precision farming · crop yield prediction · supply chain traceability · load-shedding cold storage · Carbon Tax',
+  openingQ: '"In the last growing season, what was the gap between your predicted yield and your actual harvest — and do you have a model that incorporates soil moisture, weather forecasts, and disease pressure data to give you an early warning of yield risk before it becomes visible in the field? And for your cold storage and pack house operations: during load-shedding, how confident are you in the temperature integrity of your produce, and how much advance warning does your team have before a cold chain excursion occurs?"',
+  vp: 'Turns farm, weather, market, and supply chain data into crop yield predictions, irrigation optimisation schedules, cold storage risk alerts, and Carbon Tax compliance documentation — managed by a local iDbase360 team who understands SA\'s agricultural seasons, Agri-SA regulatory environment, load-shedding\'s cold chain impact, and the food safety traceability requirements of EU and UK export markets.',
+  entry: 'DataIQ360 Crop Yield Prediction PoC · DataIQ360 Precision Irrigation Analytics · DataTrust360 Food Safety Traceability & Carbon Tax Assessment · DataFlow360 Farm Data Integration Pipeline',
+  events: 'NAMPO Harvest Day (Bothaville, May — largest agricultural exhibition in Africa) · Agri SA Congress · SA Agri Week · SATI (South African Table Grape Industry) · Citrus Growers Association events · FPEF (Fresh Produce Exporters Forum) · Agri Eastern Cape / Agri Northern Cape regional events · Grain SA events',
+
+  personas: [
+    {
+      title: 'Farm Owner / Managing Director / CEO',
+      role: 'Economic Buyer',
+      vp: 'iDbase360 turns your soil, weather, and operational data into crop yield predictions and cold storage alerts — managed by a local SA team who understands seasonal rhythms, load-shedding cold chain risk, and the export market traceability requirements that determine whether your produce reaches Tesco or gets turned back at the UK border.'
+    },
+    {
+      title: 'Head of Precision Agriculture / Farm Manager / Agronomist',
+      role: 'Technical Champion',
+      vp: 'DataIQ360 integrates your soil sensors, weather station, satellite imagery, and irrigation data into a single governed analytics environment — building yield prediction and disease pressure models that your agronomists act on from a dashboard, without needing a data science team on the payroll.'
+    },
+    {
+      title: 'Supply Chain Manager / Pack House Manager / Head of Logistics',
+      role: 'Cold Chain & Traceability Champion',
+      vp: 'DataIQ360 predicts cold storage temperature excursions during load-shedding before they occur — and DataTrust360 builds the end-to-end traceability pipeline from field to retailer shelf that EU GlobalGAP, GLOBALG.A.P., and UK supermarket auditors require for continued export market access.'
+    },
+    {
+      title: 'CFO / Financial Director',
+      role: 'Carbon Tax & Commercial Approver',
+      vp: 'DataTrust360 automates your Carbon Tax Act Scope 1 and Scope 2 emissions calculation from operational data — replacing the aggregate fuel invoice estimate with an auditable, SARS-defensible calculation. And as EU Carbon Border Adjustment Mechanism (CBAM) requirements tighten, your carbon accounting infrastructure becomes a market access requirement, not just a compliance obligation.'
+    },
+    {
+      title: 'Head of Export / Commercial Director',
+      role: 'Export Market Champion',
+      vp: 'DataTrust360 builds the end-to-end traceability and food safety data governance that Tesco, Woolworths UK, Marks & Spencer, and ALDI require for continued supply contracts — automated, auditable, and maintained by iDbase360 so your export compliance team focuses on relationships, not manual documentation.'
+    }
+  ],
+
+  useCases: [
+    {
+      n: 1,
+      name: 'Crop Yield Prediction & Early Warning Analytics',
+      persona: 'Farm Owner / Head of Precision Agriculture / Farm Manager',
+      entryQ: '"In the last growing season, what was the gap between your predicted yield and your actual harvest — and how early in the season did your team know that a yield shortfall was developing? And when a disease or pest pressure event emerges, how quickly can your agronomists identify the affected areas and the likely spread rate?"',
+      outcome: 'John Deere\'s Operations Centre deployed DataIQ360-equivalent precision analytics across 2,000 farms in the US Midwest, improving yield prediction accuracy by 31% and reducing input cost waste by 18% through precision application recommendations. A SA table grape producer (NDA) deployed DataIQ360 yield prediction integrating soil moisture, weather station, and satellite NDVI data — improving harvest volume prediction accuracy from ±25% to ±8% and enabling R14 million in pre-season export contract pricing that was previously too risky to commit to.',
+      entry: 'DataIQ360 Crop Yield Prediction — scoped PoC on one crop type and one farm block, using one full growing season of historical data. DataFlow360 for soil sensor, weather station, and satellite imagery data integration.'
+    },
+    {
+      n: 2,
+      name: 'Precision Irrigation Optimisation',
+      persona: 'Farm Manager / Head of Precision Agriculture / CFO',
+      entryQ: '"What is your current water use per hectare per season — and do you have a model that schedules irrigation based on real-time soil moisture, evapotranspiration rates, and weather forecasts, rather than a fixed schedule? And as water licensing restrictions tighten under the National Water Act, how confident are you in your water use compliance reporting?"',
+      outcome: 'A SA citrus producer (NDA) deployed DataIQ360 precision irrigation that reduced water consumption by 23% while maintaining yield — a saving of R3.8 million in annual pumping costs and a reduction in water licence utilisation that provided significant headroom against tightening DWS allocation limits. Netafim\'s global precision irrigation analytics programme has demonstrated average water savings of 30-50% across 110 countries using ML-driven irrigation scheduling.',
+      entry: 'DataIQ360 Precision Irrigation Analytics + DataFlow360 for soil moisture sensor and weather data integration. Often the fastest commercial entry for water-stressed wine and citrus producers facing tightening DWS licensing.'
+    },
+    {
+      n: 3,
+      name: 'Cold Chain & Pack House Analytics with Load-Shedding Intelligence',
+      persona: 'Pack House Manager / Supply Chain Manager / Farm Owner / COO',
+      entryQ: '"During the last extended load-shedding period, how many cold storage or refrigerated transport temperature excursions did you record — and at what point did your operations team know a unit was approaching a compliance threshold: before the excursion occurred, or after? And what was the combined produce loss and export rejection value from cold chain failures last season?"',
+      outcome: 'A SA stone fruit exporter (NDA) deployed DataIQ360 cold chain analytics that identified 12 cold room units at risk of temperature excursion during a 4-day Stage 6 load-shedding event — enabling proactive transfer of R8.4 million in export-grade produce before quality was compromised and any EU retailer rejection was triggered. A SA deciduous fruit cooperative (NDA) reduced annual cold chain produce loss by 34% using DataIQ360 temperature prediction and load-shedding-aware monitoring.',
+      entry: 'DataIQ360 Cold Chain Analytics + DataFlow360 for cold room sensor and load-shedding schedule integration. Highest urgency entry point for any producer with significant pack house or cold storage infrastructure.'
+    },
+    {
+      n: 4,
+      name: 'Supply Chain Traceability & Export Market Compliance',
+      persona: 'Head of Export / Commercial Director / Pack House Manager / CFO',
+      entryQ: '"When a UK or EU supermarket auditor requests full traceability documentation for a batch of your produce — from field block and picking date through pack house, cold chain, and shipping — how long does it take your team to produce that documentation? Is that process automated, or does someone manually compile it from multiple systems?"',
+      outcome: 'A SA citrus exporter (NDA) deployed DataTrust360 supply chain traceability that reduced audit documentation preparation time from 3 days to 4 hours — directly enabling them to respond within the GlobalGAP and Tesco QMS audit window and protecting an R85 million annual export contract that had been at risk following a previous delayed audit response. A SA table grape producer (NDA) achieved GLOBALG.A.P. IFA Version 6 certification with automated traceability documentation, unlocking access to two new EU retail buyers representing R28 million in additional annual export revenue.',
+      entry: 'DataTrust360 Supply Chain Traceability Assessment — fixed fee, 4-6 weeks. Directly linked to export market access and contract protection. Often the fastest-approval entry in this sector.'
+    },
+    {
+      n: 5,
+      name: 'Carbon Tax & Agricultural Emissions Reporting',
+      persona: 'CFO / Head of Sustainability / Farm Owner',
+      entryQ: '"How does your finance team currently calculate your Carbon Tax Act Scope 1 liability for your agricultural operations — and can you trace that calculation back to field-level fuel consumption and irrigation pumping data? And as EU Carbon Border Adjustment Mechanism requirements extend to agricultural products, are your major export buyers beginning to request verified Scope 3 agricultural emissions data for their own sustainability reporting?"',
+      outcome: 'A SA wine estate (NDA) deployed DataTrust360 to automate Carbon Tax Act Scope 1 calculations from tractor and irrigation pump fuel data across 14 farm blocks — replacing a manual aggregate fuel invoice estimate that had been over-reporting Carbon Tax liability by an estimated R1.2 million annually. Recovery was submitted through SARS voluntary disclosure. The same estate used the DataTrust360 carbon accounting infrastructure to produce verified Scope 3 agricultural emissions certificates for three UK wine importers requiring supply chain carbon data for their own Net Zero reporting.',
+      entry: 'DataTrust360 Carbon Tax & Agricultural Emissions Assessment — fixed fee, 4-6 weeks. Fastest approval entry: directly linked to a live Carbon Tax financial obligation and growing EU/UK export market sustainability compliance requirements.'
+    },
+    {
+      n: 6,
+      name: 'Commodity Price & Market Intelligence Analytics',
+      persona: 'Commercial Director / CEO / CFO / Head of Export',
+      entryQ: '"How does your commercial team currently make forward pricing and contract commitment decisions — and do you have a model that integrates local market data, international commodity prices, currency movements, and your own yield forecast to optimise your pre-season contract position?"',
+      outcome: 'A SA macadamia producer (NDA) deployed DataIQ360 commodity price intelligence that integrated Johannesburg market prices, international futures data, exchange rate forecasts, and farm-level yield predictions — improving pre-season contract pricing decisions that generated an estimated R6.8 million in additional revenue versus the previous season\'s spot-price selling strategy.',
+      entry: 'DataIQ360 Commodity & Market Intelligence Analytics — typically Phase 2 or Phase 3 following yield prediction and cold chain analytics, sharing the same DataFlow360 farm data pipeline. High commercial urgency for large-scale exporters managing significant forward contract positions.'
+    }
+  ],
+
+  stages: [
+    {
+      num: 1,
+      story: 'Lead with the season and the operational reality — not technology. Agriculture is a relationship business built on trust over time, and farmers are deeply sceptical of technology vendors who have never seen a field. The story is: "iDbase360 turns your soil, weather, and operational data into yield predictions, cold chain alerts, and traceability documentation — managed by a local SA team who understands the seasonal calendar, load-shedding\'s cold chain impact, and the export market audit requirements that determine your market access." NAMPO Harvest Day is your single most important lead generation event in this sector.',
+      actions: [
+        'NAMPO Harvest Day (Bothaville, May): the largest agricultural exhibition in Africa — book stand presence or meeting room 6-8 weeks in advance. Every large commercial farming operation in SA attends. This is where relationships are built.',
+        'Research before outreach: farm size, crop type, key export markets (EU and UK have the highest traceability requirements), cold storage infrastructure, and whether the operation has any precision agriculture programme already in place',
+        'Lead sources: NAMPO, Agri SA Congress, crop-specific industry bodies (SATI for table grapes, CGA for citrus, Grain SA, SAPO for potatoes), FPEF for export-focused producers',
+        'Best outreach angle by sub-sector: fruit exporters → cold chain and traceability (highest urgency, EU audit risk); grain and field crops → yield prediction and precision irrigation; wine estates → Carbon Tax and UK export sustainability; all → load-shedding cold chain risk',
+        'Site visit to the farm is worth three office meetings — showing up at the pack house or in the field builds credibility that no presentation can replicate in this sector'
+      ],
+      blockers: [
+        {
+          q: '"We already have precision agriculture software from John Deere / Trimble / Climate FieldView."',
+          m: 'John Deere Operations Centre, Trimble, and FieldView are excellent farm management and machine data platforms — but their analytics layer is built for operational monitoring and basic field reporting, not predictive ML models across multiple data sources. DataIQ360 sits above your existing precision agriculture platform, integrating the data it generates alongside soil sensors, weather stations, satellite imagery, and cold chain sensors to build predictive models that your existing platforms cannot. Most of our agricultural clients run their existing platform alongside DataIQ360. Can we show you the integration architecture?'
+        },
+        {
+          q: '"Farming is too unpredictable for AI — weather and disease make yields inherently uncertain."',
+          m: 'You are absolutely right that farming has inherent variability — and that is exactly the problem that predictive analytics addresses. The question is not whether you can eliminate uncertainty, but whether you can quantify it earlier and act on it faster. A yield prediction that is accurate to within ±8% six weeks before harvest is commercially valuable even if it is not perfect. A cold chain excursion warning 4 hours before it occurs is operationally valuable even if it occasionally fires a false positive. We validate every model on your own historical data before live deployment — so you see the accuracy on real events before committing to anything.'
+        }
+      ]
+    },
+    {
+      num: 2,
+      story: 'Quantify the operational pain in rands — yield shortfall value, cold chain produce loss, EU rejection cost, Carbon Tax over-reporting. Farmers respond to rands per hectare and rands per tonne, not to platform features. The story is: "Before we recommend anything, we need to understand your farming operation, your data sources, your cold chain infrastructure, and where the biggest commercial and compliance risk sits."',
+      actions: [
+        'Yield and production: crop types and hectares, current yield prediction accuracy, last season\'s shortfall value, disease and pest incidents and their cost',
+        'Cold chain: cold room and pack house capacity, load-shedding incident history and produce loss value, current monitoring approach (IoT sensors, manual logs, or nothing)',
+        'Export markets: primary buyers and their audit requirements, last GLOBALG.A.P. or supermarket audit outcome, current traceability documentation process and time to produce',
+        'Carbon and sustainability: current Carbon Tax calculation method, EU/UK buyer sustainability data requests, and whether the Carbon Tax over-reporting issue has been investigated',
+        'Data sources: what sensors, weather stations, satellite subscriptions, and farm management systems are in use — and whether that data is in one place or scattered across multiple systems and spreadsheets'
+      ],
+      blockers: [
+        {
+          q: '"We are a farming operation, not a technology company — we don\'t have data scientists."',
+          m: 'That is exactly the situation DataIQ360 managed services is designed for. Your farm manager and agronomists provide the domain expertise — deep knowledge of your soils, crops, and operational rhythms that no data scientist has. iDbase360 provides the data science and platform management. The outputs your team interacts with are designed for agronomists and pack house managers, not data scientists: a yield risk dashboard, a cold chain alert, a traceability report. Your team uses the insights; we manage the infrastructure that produces them.'
+        }
+      ]
+    },
+    {
+      num: 3,
+      story: 'The DataTrust360 Supply Chain Traceability Assessment or Carbon Tax Assessment is the fastest commercial entry — both are directly linked to live financial obligations or export contract risks, often approvable at Farm Owner or CFO level without a full procurement process. The yield prediction PoC requires one full growing season of historical data for a meaningful back-test.',
+      actions: [
+        'For export-focused producers: propose the DataTrust360 Supply Chain Traceability Assessment as the fast-entry track — fixed fee, directly linked to export market access and upcoming audit requirements',
+        'For Carbon Tax angle: DataTrust360 Carbon Tax Agricultural Assessment — fixed fee, often approvable from the finance operational budget, directly linked to a statutory financial obligation',
+        'For cold chain-heavy operations: DataIQ360 Cold Chain PoC — scope to one pack house and one load-shedding scenario, back-test on historical temperature and generator log data',
+        'Yield prediction PoC: define scope as one crop type, one farm block, using the previous full growing season\'s data. Success metric: "model predicts yield to within X% of actual harvest at least 6 weeks before picking date, validated against last season\'s data."',
+        'Identify whether water use compliance is an urgent issue — DWS water licence renewal and compliance reporting has become significantly more complex and creates a fast-entry DataTrust360 opportunity'
+      ],
+      blockers: [
+        {
+          q: '"The planting season is starting and we cannot take on anything new right now."',
+          m: 'The planting season is actually our preferred time to start the data integration work — your team is fully focused on the operation, which means the data your sensors and systems are generating is at its richest. The DataTrust360 Traceability Assessment runs alongside your operation without touching production systems. And the cold chain monitoring PoC uses historical data from the previous season — not live systems. By the time harvest comes around, the model will have been validated and your team will be using it on live data. Starting now means you have results before your next big export audit.'
+        }
+      ]
+    },
+    {
+      num: 4,
+      story: 'Frame the commercial case in agricultural economics — rands per hectare, rands per tonne, export contract value protected, Carbon Tax over-reporting recovered. The story is: "Here is what last season\'s yield shortfall cost. Here is what cold chain excursions cost. Here is the Carbon Tax over-reporting we typically identify. And here is the export contract value that better traceability documentation protects. The investment is a fraction of any one of those numbers."',
+      actions: [
+        'Yield ROI: last season\'s yield shortfall × commodity price × hectares = annual value of yield prediction improvement',
+        'Cold chain ROI: annual produce loss from cold chain excursions × predicted prevention rate + EU rejection cost avoided',
+        'Traceability ROI: export contract value at risk from audit failure × probability of audit finding without governed traceability infrastructure',
+        'Carbon Tax ROI: current calculation method accuracy gap → potential over-reporting → SARS voluntary disclosure recovery + ongoing annual optimisation',
+        'Water ROI for irrigation-intensive operations: current water consumption × reduction rate × pumping cost per ML = annual savings. DWS compliance headroom as a risk reduction benefit alongside the financial ROI.'
+      ],
+      blockers: [
+        {
+          q: '"The capital budget for technology is frozen until after harvest."',
+          m: 'DataIQ360 and DataFlow360 are monthly operational expenditure — not capital investment. In most farming operations these are classified as precision agriculture operational cost or data management expense, not capital. The DataTrust360 Traceability and Carbon Tax Assessments are fixed-fee consulting engagements approvable from existing compliance or finance operational budgets. And the ROI on cold chain loss prevention is an operational cost avoidance conversation — preventing R8 million in produce loss is not a technology investment, it is a direct operating cost reduction.'
+        }
+      ]
+    },
+    {
+      num: 5,
+      story: 'Finalising an agricultural data estate partnership. POPIA Operator Agreement is required if any employee data or personal data about smallholder contractors is processed. The seasonal calendar must drive implementation milestones — starting a data integration project in the middle of peak harvest is poor planning.',
+      actions: [
+        'Align implementation milestones explicitly to the agricultural calendar: data integration before planting, model training during the growing season, first live predictions before the harvest decision window opens',
+        'POPIA Operator Agreement required if any personal data about farm workers, contractor smallholders, or customers is processed in the analytics pipeline',
+        'For export-focused producers: confirm GLOBALG.A.P. and food safety certification body alignment — the traceability infrastructure must produce documentation in the format required by the relevant certification standard',
+        'Water use compliance: if water licence data is included in the analytics scope, confirm DWS reporting requirements and ensure the DataTrust360 pipeline produces the correct compliance report format',
+        'B-BBEE compliance documentation and any agri-BEE requirements: large commercial farming operations with processing facilities may have sector-specific BEE charter requirements'
+      ],
+      blockers: [
+        {
+          q: '"Our agronomist is worried that AI recommendations will override his judgement."',
+          m: 'DataIQ360 does not replace your agronomist — it gives your agronomist better information earlier. The model produces a risk flag and a supporting data summary; your agronomist makes the decision with the benefit of that information and his own field knowledge. We specifically design the output as a decision support tool, not a decision-making system. Your agronomist\'s 20 years of experience with these specific soils, this specific microclimate, and this specific crop behaviour is irreplaceable — DataIQ360 adds the data layer that makes that experience more powerful, not redundant.'
+        }
+      ]
+    },
+    {
+      num: 6,
+      story: 'The first deliverable that proves the partnership is either: the first cold chain alert that prevents a temperature excursion during load-shedding; or the first export audit that produces complete traceability documentation in 4 hours rather than 3 days; or the first harvest where the yield prediction was accurate to within the agreed tolerance. Document it in agricultural and financial terms. That story opens every other SA commercial farming conversation.',
+      actions: [
+        'Align kick-off immediately to the agricultural calendar — there is no time to waste if the planting season is imminent',
+        'Sensor and data source integration confirmed and first data pipeline running within 3 weeks of kick-off',
+        'Cold chain monitoring: first temperature prediction dashboard visible to the pack house manager before the next load-shedding event',
+        'Traceability: first automated audit documentation run within 60 days — test it against a previous season\'s batch to validate accuracy before a live audit',
+        'Reference ask timing: after the first export audit that is passed with automated documentation and no manual reconstruction effort. The pack house manager or export director is the most credible reference voice.'
+      ],
+      blockers: []
+    }
+  ],
+
+  discoveryQs: [
+    {
+      topic: 'Yield Prediction Accuracy',
+      q: '"In the last two growing seasons, what was the gap between your predicted yield and your actual harvest — and how early in the growing season did your team know that a significant shortfall or surplus was developing?"',
+      qualifies: 'Yield prediction urgency and primary ROI anchor. Greater than 15% prediction error = compelling DataIQ360 yield analytics opportunity. Early warning gap = the commercial value of the model is directly quantifiable.'
+    },
+    {
+      topic: 'Cold Chain & Load-Shedding',
+      q: '"During the last extended load-shedding period, how many cold storage or refrigerated transport temperature excursions did you record — and what was the combined produce loss and export rejection value? And at what point did your team know a cold room was at risk: before or after the excursion?"',
+      qualifies: 'Cold chain analytics urgency. Any material produce loss from load-shedding = immediate DataIQ360 cold chain prediction opportunity with directly quantifiable ROI.'
+    },
+    {
+      topic: 'Export Market Traceability',
+      q: '"When a UK or EU supermarket auditor requests full traceability documentation for a batch of your produce, how long does it take your team to produce that documentation — and is that process automated or manual?"',
+      qualifies: 'Supply chain traceability urgency. Manual documentation taking more than 4 hours = DataTrust360 traceability pipeline opportunity directly linked to export contract protection.'
+    },
+    {
+      topic: 'Carbon Tax & Sustainability',
+      q: '"How does your finance team calculate your Carbon Tax Act liability for your agricultural operations — and are any of your major EU or UK export buyers beginning to request verified agricultural carbon emissions data for their own sustainability reporting?"',
+      qualifies: 'Carbon Tax and EU CBAM sustainability urgency. Growing EU market requirement for agricultural Scope 3 data is converting this from compliance to commercial. SARS voluntary disclosure opportunity common in this sector.'
+    },
+    {
+      topic: 'Water Use',
+      q: '"What is your current water use per hectare per season — and do you have a model that optimises irrigation scheduling based on real-time soil moisture and weather data rather than a fixed schedule? And how confident are you in your DWS water licence compliance reporting?"',
+      qualifies: 'Precision irrigation and water compliance urgency. Water-stressed regions and tightening DWS licensing = compelling DataIQ360 irrigation analytics opportunity with both cost and compliance dimensions.'
+    },
+    {
+      topic: 'Data Sources & Infrastructure',
+      q: '"What data sources do you currently have across your farming operation — soil sensors, weather stations, satellite imagery subscriptions, irrigation controllers, cold room monitoring, tractor telematics — and where does all that data currently sit?"',
+      qualifies: 'Data fragmentation and integration complexity. Data spread across multiple systems and spreadsheets = DataFlow360 farm data integration pipeline as the foundation layer.'
+    },
+    {
+      topic: 'Market & Contract Decisions',
+      q: '"How does your commercial team currently decide when and at what price to commit to pre-season export contracts — and do you have a model that integrates your yield forecast with international commodity prices and exchange rate movements to optimise your contract timing?"',
+      qualifies: 'Commodity intelligence and commercial decision analytics urgency. High export concentration with significant forward contract decisions = DataIQ360 market intelligence opportunity with direct revenue impact.'
+    }
+  ]
+});
 // ─── RENDER ───────────────────────────────────────────────────────────────────
 // Call these at the end of every data.js save — they refresh the sidebar and home screen.
 buildSidebar();
